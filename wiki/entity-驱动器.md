@@ -68,17 +68,18 @@ tags: [产品线, 驱动器, EtherCAT, CIA402]
 - **配置文件**：XML / ESI 文件（[[manual-sac-n2-xml-update-guide]]、[[manual-sac-xml-modify-method]]）
 - **EtherCAT 协议**：详见 [[manual-sac-n2-ethercat-application]]（状态机/控制字/状态字/PDO/6种控制模式/35种回零/探针/7种PLC适配）
 
-## 关联资料（8 件）
+## 关联资料（11 件）
 
 - [[manual-dh-电缸选型手册]] — 电缸选型手册（含驱动器完整谱系表、SAC-S/N 与 NP1/NP2/NP4 参数页）⭐
 - [[manual-dh-音圈选型手册]] — 音圈选型手册（驱动器选配表 + X775 线缆料号体系 + 研控第三方驱动）⭐
 - [[manual-sac-n2-driver-debug-sop]] — SAC-N2 驱动器调试软件操作及故障分析（跨音圈电机线）
 - SAC-NP2 EtherCAT 型双轴驱动器产品操作手册（Ver-M-1.00.12, 2025-10-07）
 - SAC-N2 EtherCAT 应用手册（20260818，跨音圈电机线）— [[manual-sac-n2-ethercat-application]]
-- SAC-N2 驱动器初次上电 SOP（20260415）
-- SAC 系列驱动器 USB 升级操作指导文档（20260818）
-- SAC-N2 XML 文件更新指导手册（20260818，跨音圈电机线）
-- SAC XML 文件修改方法（20260818）
+- SAC-N2 驱动器初次上电 SOP（20260415）— [[manual-sac-n2-first-power-on-sop]]
+- SAC 系列驱动器 USB 升级操作指导文档（20260818）— [[manual-sac-usb-upgrade]]
+- SAC-N2 XML 文件更新指导手册（20260818）— [[manual-sac-n2-xml-update]]
+- SAC XML 文件修改方法（20260818）— [[manual-sac-xml-modify]]
+- 大寰电机 SAC-NP2 驱动参数导入导出 SOP（20260408）— [[manual-sac-np2-param-import-export]]
 - SAC_2Axis_V1.7.2 对象字典（xlsx）
 
 ## ECAT 盒子（485→ECAT 网关）
