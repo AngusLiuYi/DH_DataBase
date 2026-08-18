@@ -17,6 +17,8 @@ tags: [产品线, 驱动器, EtherCAT, CIA402]
 
 ⚠️ **外置 485 驱动器/控制器（SAC-S / SAC-N / SAC-NF）不单列驱动器产品线**：它仅是电缸/电爪内部控制板外置，用法与内驱一致，附属于对应 [[entity-电缸]] / [[entity-电爪]]。
 
+> ⚠️ **SAC-NF ≠ SAC-NF2**（[[corrections]] C034）：**SAC-NF 是最早期闭环力控电缸驱动器，基于 SAC-N 的 485 协议研发**，属外置 485 类、不单列。而 **SAC-NF2 是 EtherCAT/CIA402 伺服驱动器**（与 SAC-NP2 同硬件不同固件，见 C017）。两者逻辑完全不一样，读资料时先分清是"NF"还是"NF2"。
+
 ⚠️ **SAC-N2 逐渐退市**（选型手册 CN-2025.10 P20 注：可用 SAC-NP2 替代，具体差异咨询销售）。已编译的 SAC-N2 三件套 + EtherCAT 应用手册对在役设备仍有效；新项目选型优先 SAC-NP2。
 
 ## 型号清单（完整谱系，据选型手册 CN-2025.10）
@@ -68,12 +70,13 @@ tags: [产品线, 驱动器, EtherCAT, CIA402]
 - **配置文件**：XML / ESI 文件（[[manual-sac-n2-xml-update-guide]]、[[manual-sac-xml-modify-method]]）
 - **EtherCAT 协议**：详见 [[manual-sac-n2-ethercat-application]]（状态机/控制字/状态字/PDO/6种控制模式/35种回零/探针/7种PLC适配）
 
-## 关联资料（11 件）
+## 关联资料（14 件）
 
 - [[manual-dh-电缸选型手册]] — 电缸选型手册（含驱动器完整谱系表、SAC-S/N 与 NP1/NP2/NP4 参数页）⭐
 - [[manual-dh-音圈选型手册]] — 音圈选型手册（驱动器选配表 + X775 线缆料号体系 + 研控第三方驱动）⭐
 - [[manual-sac-n2-driver-debug-sop]] — SAC-N2 驱动器调试软件操作及故障分析（跨音圈电机线）
-- SAC-NP2 EtherCAT 型双轴驱动器产品操作手册（Ver-M-1.00.12, 2025-10-07）
+- SAC-NP2 EtherCAT 型双轴驱动器产品操作手册（Ver-M-1.00.12, 2025-10-07）— [[manual-sac-np2-product]] ⭐
+- [[manual-sac-nf2-force-control]] — SAC-NF2 柔性力控使用手册（MCK 闭环力控）⭐
 - SAC-N2 EtherCAT 应用手册（20260818，跨音圈电机线）— [[manual-sac-n2-ethercat-application]]
 - SAC-N2 驱动器初次上电 SOP（20260415）— [[manual-sac-n2-first-power-on-sop]]
 - SAC 系列驱动器 USB 升级操作指导文档（20260818）— [[manual-sac-usb-upgrade]]

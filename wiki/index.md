@@ -1,6 +1,6 @@
 # Wiki 索引
 
-> 总页面数: 19 ｜ 已编译资料: 14/41 ｜ 最后更新: 2026-08-18
+> 总页面数: 32 ｜ 已编译资料: 21/48 ｜ 最后更新: 2026-08-19
 > 覆盖产品线: 音圈电机, 电缸, 电爪, 驱动器
 
 ## 按类型
@@ -14,9 +14,17 @@
 ### 概念 (1)
 - [[concept-开环力控]] — 两段位置+电流限制实现力控，含标定公式 y=kx+b
 
-### 主题 / 案例 (0)
+### 主题 / 案例 (1)
+- [[topic-售后排查引导清单]] — 微信式追问排查模板（定位产品线→看灯→分支追问→高频根因速查）⭐ 新增
 
-### 手册编译页 (14)
+### 案例库 (仅已闭环, 4 条初始)
+- [[cases/00-案例库索引]] — 案例库索引 + 频次统计汇总表 ⭐ 新增
+- [[cases/案例-001-PGEA上电堵转未配对]] — 上电堵转=电爪与驱动盒未配对（C028）
+- [[cases/案例-002-位置丢失抱闸时间]] — 位置丢失/夹持状态消失=抱闸时间参数（C036）
+- [[cases/案例-003-垂直寻相失败ABZ]] — 垂直重载寻相失败=ABZ 每次上电寻相（C018）
+- [[cases/案例-004-RGIC旋转背隙]] — 旋转位置不准=RGIC 齿轮背隙（C033）
+
+### 手册编译页 (21)
 - [[manual-sac-n2-driver-debug-sop]] — SAC-N2 驱动器调试软件操作及故障分析（V1.1, 29页）
 - [[manual-sac-n2-motor-tuning]] — SAC-N2 电机整定参考（参数/编码器/刚性表/寻相/三环整定/3案例）
 - [[manual-sac-n2-faq]] — SAC-N2 FAQ（12条高频故障问答：使能/编码器/运动控制/供电/总线通信）
@@ -25,15 +33,22 @@
 - [[manual-sac-n2-first-power-on-sop]] — SAC-N2 初次上电 SOP（连接上位机/参数备份导入/电机确认/寻相/IO配置/屏蔽轴 6 步）
 - [[manual-dh-音圈选型手册]] — DH 音圈选型手册 CN-3.3.2025.10（在售5系列全参数+VLAR退市/更名记录+驱动器线缆匹配+研控第三方）⭐
 - [[manual-dh-电爪选型手册]] — DH 电爪选型手册 CN-2025.08（四大家族+定货码+485≤4台+通讯转换模块+灵巧手）⭐
-- [[manual-sac-usb-upgrade]] — SAC 系列驱动器 USB 固件升级指导（7步流程）⭐ 新增
-- [[manual-dh-mcea-电缸操作手册]] — MCEA 电缸操作手册 V4.0（内置驱动型，两套 Modbus 协议+完整报警表）⭐ 新增
-- [[manual-dh-pgia-pgea-电爪操作手册]] — PGIA/PGEA 电爪操作手册 V3.3（Modbus 寄存器+NPN/PNP IO+掉落状态）⭐ 新增
-- [[manual-sac-n2-xml-update]] — SAC-N2 XML 文件更新指导（0x13 错误烧录 ESI 流程）⭐ 新增
-- [[manual-sac-xml-modify]] — SAC XML 文件修改方法（Slot 模块 + PDO 列表增删）⭐ 新增
-- [[manual-sac-np2-param-import-export]] — SAC-NP2 驱动参数导入导出 SOP（轴1=Z/轴2=R）⭐ 新增
+- [[manual-sac-usb-upgrade]] — SAC 系列驱动器 USB 固件升级指导（7步流程）⭐
+- [[manual-dh-mcea-电缸操作手册]] — MCEA 电缸操作手册 V4.0（内置驱动型，两套 Modbus 协议+完整报警表）⭐
+- [[manual-dh-pgia-pgea-电爪操作手册]] — PGIA/PGEA 电爪操作手册 V3.3（Modbus 寄存器+NPN/PNP IO+掉落状态）⭐
+- [[manual-sac-n2-xml-update]] — SAC-N2 XML 文件更新指导（0x13 错误烧录 ESI 流程）⭐
+- [[manual-sac-xml-modify]] — SAC XML 文件修改方法（Slot 模块 + PDO 列表增删）⭐
+- [[manual-sac-np2-param-import-export]] — SAC-NP2 驱动参数导入导出 SOP（轴1=Z/轴2=R）⭐
+- [[manual-sac-nf2-force-control]] — SAC-NF2 柔性力控使用手册（MCK 模型 + 对象字典 + 调参）⭐
+- [[manual-dh-电缸报警代码解析]] — DH 电缸故障码表（内驱版，HEX 列）⭐
+- [[manual-sac-np2-product]] — SAC-NP2 双轴驱动器产品操作手册（规格/接口/数码管/错误码/寻相）⭐
+- [[manual-dh-电爪抱闸时间修改]] — 电爪抱闸触发时间修改（0x1108 组）⭐
+- [[manual-dh-pgls-电爪校准偏置值]] — PGLS 电爪零电角/绝对值/偏置校准（联赢激光）⭐
+- [[manual-dh-电缸软重启]] — 电缸软重启 SOP（替代物理断电）⭐
+- [[manual-dh-485寄存器表总览]] — 485 寄存器操作地址速查（电缸+电爪通用，DHGripperUI）⭐ 新增
 
 ### 元数据 (1)
-- [[corrections]] — 纠正记录（C001-C031，编译与使用过程中被纠正的点）
+- [[corrections]] — 纠正记录（C001-C037，编译与使用过程中被纠正的点）
 
 ## 按产品线
 
@@ -45,28 +60,37 @@
 - [[manual-sac-n2-first-power-on-sop]]
 - [[manual-dh-音圈选型手册]] ⭐
 
-### 电缸 (2 手册, 1 实体页)
+### 电缸 (5 手册, 1 实体页)
 - [[manual-dh-电缸选型手册]] ⭐
-- [[manual-dh-mcea-电缸操作手册]] ⭐ 新增
+- [[manual-dh-mcea-电缸操作手册]] ⭐
+- [[manual-dh-电缸报警代码解析]] ⭐
+- [[manual-dh-电缸软重启]] ⭐
+- [[manual-dh-485寄存器表总览]] ⭐ 新增
 - [[entity-电缸]] — MCEA/RCEA 在售体系 + 三种驱动器形态 + ECAT 盒子正式型号
 
-### 电爪 (2 手册, 1 实体页)
+### 电爪 (5 手册, 1 实体页)
 - [[manual-dh-电爪选型手册]] ⭐
-- [[manual-dh-pgia-pgea-电爪操作手册]] ⭐ 新增
+- [[manual-dh-pgia-pgea-电爪操作手册]] ⭐
+- [[manual-dh-电爪抱闸时间修改]] ⭐
+- [[manual-dh-pgls-电爪校准偏置值]] ⭐
+- [[manual-dh-485寄存器表总览]] ⭐ 新增
 - [[entity-电爪]] — 四大家族 + 售后要点速查
 
-### 驱动器 (11 手册, 跨线)
+### 驱动器 (14 手册, 跨线)
 - [[manual-sac-n2-driver-debug-sop]]
 - [[manual-sac-n2-motor-tuning]]
 - [[manual-sac-n2-faq]]
 - [[manual-sac-n2-ethercat-application]]
 - [[manual-sac-n2-first-power-on-sop]]
 - [[manual-sac-usb-upgrade]] ⭐
-- [[manual-sac-n2-xml-update]] ⭐ 新增
-- [[manual-sac-xml-modify]] ⭐ 新增
-- [[manual-sac-np2-param-import-export]] ⭐ 新增
+- [[manual-sac-n2-xml-update]] ⭐
+- [[manual-sac-xml-modify]] ⭐
+- [[manual-sac-np2-param-import-export]] ⭐
+- [[manual-sac-nf2-force-control]] ⭐ 新增
+- [[manual-sac-np2-product]] ⭐ 新增
 - [[manual-dh-电缸选型手册]]（驱动器完整谱系表）
 - [[manual-dh-音圈选型手册]]（驱动器选配表 + 研控第三方）
+- [[manual-dh-电缸报警代码解析]]（电缸故障码，SAC 伺服驱动器故障码见 NP2 产品手册）
 
 ### 通用 (0)
 
@@ -86,7 +110,14 @@
 - [x] SAC-N2 XML文件更新指导手册_20260818.md → [[manual-sac-n2-xml-update]]
 - [x] SAC XML文件修改方法_20260818.md → [[manual-sac-xml-modify]]
 - [x] 大寰电机SAC-NP2驱动参数导入导出SOP_20260408.pdf → [[manual-sac-np2-param-import-export]]
-- [ ] 其余 27 件待编译
+- [x] SAC-NF2-柔性力控使用手册_v20260305.docx → [[manual-sac-nf2-force-control]]
+- [x] 电缸报警代码解析_20241111.xlsx → [[manual-dh-电缸报警代码解析]]（内驱电缸故障码表，C032）
+- [x] SAC-NP2 EtherCAT型双轴驱动器-产品操作手册 → [[manual-sac-np2-product]]
+- [x] 大寰电爪更改抱闸时间SOP_20240820.docx → [[manual-dh-电爪抱闸时间修改]]
+- [x] PGLS电爪校准偏置值SOP-联赢激光_20260602.docx → [[manual-dh-pgls-电爪校准偏置值]]
+- [x] 大寰电缸软重启SOP_v20240819.docx → [[manual-dh-电缸软重启]]
+- [x] 4 份寄存器表（电爪/一体式电缸/分体式电缸/PGLS）→ [[manual-dh-485寄存器表总览]]
+- [ ] 其余 24 件待编译
 
 ## 已确认的疑点（原编译不确定点，Fly 已逐条确认）
 
@@ -103,9 +134,15 @@
 11. XML：**版本持续更新但基础内容不变，各版本基本通用**（C029）
 12. XML：**Force Control = 0x103**（原文第二处"0x102"为笔误）（C030）
 13. XML：对象定义与对象字典 xlsx **同一个用处**，可互相参照（C031）
+14. 电缸报警代码解析 xlsx：**也是内驱电缸故障码表**，非 C003 待补的伺服驱动器表（C032）
+15. 电爪结构：**平行爪单电机（正转夹持反转张开）vs 旋转爪双电机耦合插补**；主流双芯片（C033）
+16. **SAC-NF（早期 485 闭环力控电缸驱动器）≠ SAC-NF2（伺服驱动器）**，逻辑完全不同（C034）
+17. **485 系列电缸电爪寄存器大量相同**，电缸操作在电爪上通用；共用 DHGripperUI（C035）
+18. **抱闸时间参数**：防长时夹持大电流过热；旧固件 bug 开闭抱闸丢编码器圈数→位置丢失/夹持状态消失（C036）
+19. **PGHL/PGLS 用「电缸方案」**：功率大、夹持电池，寄存器单位与 0x1600 控制字同电缸；其他电爪不支持控制字（C037）
 
 > 当前无待确认疑点。后续编译中发现新疑点将列在此处并标注"待确认"。
 
 ## 待 Fly 确认的疑点（本轮编译新发现，未采信推断）
 
-> 当前无待确认疑点。上一轮 3 个疑点已由 Fly 逐条确认（C029-C031），见下方"已确认的疑点"。
+> 当前无待确认疑点。
