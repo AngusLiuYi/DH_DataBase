@@ -72,9 +72,11 @@ tags: [产品线, 电爪]
 - [[manual-dh-485寄存器表总览]] — 485 寄存器操作地址速查（电爪+电缸通用，DHGripperUI）⭐
 - [[manual-dh-电爪抱闸时间修改]] — 抱闸触发时间修改（0x1108 寄存器）⭐
 - [[manual-dh-pgls-电爪校准偏置值]] — PGLS 零电角/绝对值/偏置校准（联赢激光现场）⭐
+- [[manual-dh-夹爪固件升级]] — RGD/RGI/RGIC 夹爪固件更新 + 校准 ⭐
 
-### 待入库（已登记 MANIFEST）
-- M2E-B1-4 通讯转换模块 + V5.x + 使用说明书（docx）
+### ECAT 盒子（485→ECAT 网关）
+- [[manual-dh-m2e-b1-4通讯盒使用说明]] — M2E-B1-4 通讯盒使用说明（5.x）⭐
+- [[manual-dh-ecat盒子固件升级]] — ECAT 盒子固件升级 ⭐
 
 ## See Also
 

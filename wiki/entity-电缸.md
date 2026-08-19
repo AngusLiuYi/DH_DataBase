@@ -62,8 +62,9 @@ tags: [产品线, 电缸]
 - SAC-N2 电缸适配样本（20260818）
 
 ### ECAT 盒子（485→ECAT 网关）
-- ECAT 盒子使用手册 #1（v1.1）/ #2（v1.0）
-- 基恩士 KV 适配 ECAT 盒子（v1.0）
+- [[manual-dh-m2e-b1-4通讯盒使用说明]] — M2E-B1-4 EtherCAT 通讯盒使用说明（5.x）⭐
+- [[manual-dh-ecat盒子固件升级]] — ECAT 盒子固件升级（ESI/Bin/CFG）⭐
+- [[manual-dh-基恩士适配ecat盒子]] — 基恩士 KV8000/7500 适配 SOP ⭐
 - 正式型号：M2E-B1-1（EtherCAT 1接1）/ M2E-B1-4（1接4）；另有 TCP/IP、PROFINET、EtherCAT转IO、485转USB 模块（见 [[manual-dh-电缸选型手册]] 第六章）
 
 ## See Also

@@ -1,6 +1,6 @@
 # Wiki 索引
 
-> 总页面数: 32 ｜ 已编译资料: 21/48 ｜ 最后更新: 2026-08-19
+> 总页面数: 44 ｜ 已编译资料: 33/49 ｜ 最后更新: 2026-08-19
 > 覆盖产品线: 音圈电机, 电缸, 电爪, 驱动器
 
 ## 按类型
@@ -24,7 +24,7 @@
 - [[cases/案例-003-垂直寻相失败ABZ]] — 垂直重载寻相失败=ABZ 每次上电寻相（C018）
 - [[cases/案例-004-RGIC旋转背隙]] — 旋转位置不准=RGIC 齿轮背隙（C033）
 
-### 手册编译页 (21)
+### 手册编译页 (33)
 - [[manual-sac-n2-driver-debug-sop]] — SAC-N2 驱动器调试软件操作及故障分析（V1.1, 29页）
 - [[manual-sac-n2-motor-tuning]] — SAC-N2 电机整定参考（参数/编码器/刚性表/寻相/三环整定/3案例）
 - [[manual-sac-n2-faq]] — SAC-N2 FAQ（12条高频故障问答：使能/编码器/运动控制/供电/总线通信）
@@ -45,35 +45,50 @@
 - [[manual-dh-电爪抱闸时间修改]] — 电爪抱闸触发时间修改（0x1108 组）⭐
 - [[manual-dh-pgls-电爪校准偏置值]] — PGLS 电爪零电角/绝对值/偏置校准（联赢激光）⭐
 - [[manual-dh-电缸软重启]] — 电缸软重启 SOP（替代物理断电）⭐
-- [[manual-dh-485寄存器表总览]] — 485 寄存器操作地址速查（电缸+电爪通用，DHGripperUI）⭐ 新增
+- [[manual-dh-485寄存器表总览]] — 485 寄存器操作地址速查（电缸+电爪通用，DHGripperUI）⭐
+- [[manual-dh-ecat盒子固件升级]] — ECAT 盒子固件升级（ESI/Bin/CFG）⭐ 新增
+- [[manual-dh-夹爪固件升级]] — RGD/RGI/RGIC 夹爪固件更新 + 校准 ⭐ 新增
+- [[manual-dh-基恩士适配ecat盒子]] — 基恩士 KV8000/7500 适配 ECAT 盒子 SOP ⭐ 新增
+- [[manual-dh-m2e-b1-4通讯盒使用说明]] — M2E-B1-4 EtherCAT 通讯盒使用说明（5.x）⭐ 新增
+- [[manual-xjc-608t-操作说明SOP]] — XJC-608T-F 压力显示器操作说明（力控标定硬件）⭐ 新增
+- [[manual-dh-控制卡适配技术样本]] — 控制卡适配技术样本总览（7样本合并：凌臣/汇川/固高 × SAC-N2/NP4/N1）⭐ 新增
+- [[manual-dh-旋转零点校准]] — 电爪旋转轴零点校准（0x0500 写 0）⭐ 新增
+- [[manual-dh-电气篇应用指导]] — 产品应用指导-电气篇（供电/接地/末端安装）⭐ 新增
+- [[manual-鑫精诚力显示器参数修改说明]] — 力显示器参数修改（小数点/砝码/模拟量）⭐ 新增
+- [[manual-dh-三菱卓岚通讯配置]] — 三菱 PLC + 卓岚网关简单 CPU 通讯配置 ⭐ 新增
+- [[manual-sac-对象字典]] — SAC 双轴驱动器对象字典 V1.7.2（预设 PDO 三模块）⭐ 新增
+- [[manual-sac-伺服驱动器报警代码表]] — SAC 伺服驱动器报警代码表（0x603F 总线代码，闭环 C003）⭐ 新增
 
 ### 元数据 (1)
 - [[corrections]] — 纠正记录（C001-C037，编译与使用过程中被纠正的点）
 
 ## 按产品线
 
-### 音圈电机 (6 手册)
+### 音圈电机 (7 手册)
 - [[manual-sac-n2-driver-debug-sop]]
 - [[manual-sac-n2-motor-tuning]]
 - [[manual-sac-n2-faq]]
 - [[manual-sac-n2-ethercat-application]]
 - [[manual-sac-n2-first-power-on-sop]]
 - [[manual-dh-音圈选型手册]] ⭐
+- [[manual-dh-控制卡适配技术样本]] ⭐ 新增
 
-### 电缸 (5 手册, 1 实体页)
+### 电缸 (6 手册, 1 实体页)
 - [[manual-dh-电缸选型手册]] ⭐
 - [[manual-dh-mcea-电缸操作手册]] ⭐
 - [[manual-dh-电缸报警代码解析]] ⭐
 - [[manual-dh-电缸软重启]] ⭐
-- [[manual-dh-485寄存器表总览]] ⭐ 新增
+- [[manual-dh-485寄存器表总览]] ⭐
+- [[manual-dh-m2e-b1-4通讯盒使用说明]] ⭐ 新增
 - [[entity-电缸]] — MCEA/RCEA 在售体系 + 三种驱动器形态 + ECAT 盒子正式型号
 
-### 电爪 (5 手册, 1 实体页)
+### 电爪 (6 手册, 1 实体页)
 - [[manual-dh-电爪选型手册]] ⭐
 - [[manual-dh-pgia-pgea-电爪操作手册]] ⭐
 - [[manual-dh-电爪抱闸时间修改]] ⭐
 - [[manual-dh-pgls-电爪校准偏置值]] ⭐
-- [[manual-dh-485寄存器表总览]] ⭐ 新增
+- [[manual-dh-夹爪固件升级]] ⭐ 新增
+- [[manual-dh-485寄存器表总览]] ⭐
 - [[entity-电爪]] — 四大家族 + 售后要点速查
 
 ### 驱动器 (14 手册, 跨线)
@@ -117,7 +132,20 @@
 - [x] PGLS电爪校准偏置值SOP-联赢激光_20260602.docx → [[manual-dh-pgls-电爪校准偏置值]]
 - [x] 大寰电缸软重启SOP_v20240819.docx → [[manual-dh-电缸软重启]]
 - [x] 4 份寄存器表（电爪/一体式电缸/分体式电缸/PGLS）→ [[manual-dh-485寄存器表总览]]
-- [ ] 其余 24 件待编译
+- [x] ECAT盒子固件升级SOP（含ESI与CFG + 仅ESI与CFG）→ [[manual-dh-ecat盒子固件升级]]
+- [x] RGD，RGI，RGIC夹爪固件升级手册 → [[manual-dh-夹爪固件升级]]
+- [x] 基恩士KV8000&7500PLC适配DHetherCAT盒子SOP → [[manual-dh-基恩士适配ecat盒子]]
+- [x] M2E-B1-4+V5.x+使用说明书 → [[manual-dh-m2e-b1-4通讯盒使用说明]]
+- [x] XJC-608T-F操作说明SOP → [[manual-xjc-608t-操作说明SOP]]
+- [x] 7 个控制卡适配技术样本 → [[manual-dh-控制卡适配技术样本]]
+- [x] 旋转零点校准_20240524.docx → [[manual-dh-旋转零点校准]]
+- [x] 产品应用指导手册-电气篇v20241029.pdf → [[manual-dh-电气篇应用指导]]
+- [x] 鑫精诚力显示器参数修改说明_20260416.pdf → [[manual-鑫精诚力显示器参数修改说明]]
+- [x] 三菱-卓岚-简单CPU通讯配置SOP_v20141119.docx → [[manual-dh-三菱卓岚通讯配置]]
+- [x] SAC_2Axis_V1.7.2对象字典.xlsx → [[manual-sac-对象字典]]
+- [x] 两段位置限制电流实现力控_20230915.pdf → 并入 [[concept-开环力控]]
+- [x] SAC伺服驱动器报警代码表_20260819.xlsx → [[manual-sac-伺服驱动器报警代码表]]（闭环 C003）
+- [ ] 其余 5 件待编译（均为视频/演示 mp4/pptx，不适合编译成文本页）
 
 ## 已确认的疑点（原编译不确定点，Fly 已逐条确认）
 
