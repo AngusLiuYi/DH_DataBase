@@ -1,0 +1,831 @@
+<!DOCTYPE html><html lang="zh"><head><meta charset="utf-8">
+<style>
+body{font-family:-apple-system,'Microsoft YaHei',sans-serif;margin:0;background:#f5f5f5;color:#222}
+header{background:#1a237e;color:#fff;padding:16px 24px}
+h1{margin:0;font-size:20px} .sub{opacity:.85;font-size:13px;margin-top:4px}
+.wrap{padding:16px 24px}
+.summary{display:flex;gap:12px;margin:16px 0}
+.card{flex:1;background:#fff;border-radius:8px;padding:14px;text-align:center;box-shadow:0 1px 3px rgba(0,0,0,.1)}
+.card .n{font-size:28px;font-weight:700} .card .l{font-size:13px;color:#666}
+.sec{margin:20px 0} .sec h2{font-size:16px;border-left:4px solid #1a237e;padding-left:8px}
+.item{background:#fff;border-radius:8px;padding:12px 14px;margin:8px 0;box-shadow:0 1px 2px rgba(0,0,0,.08)}
+.item .top{font-size:12px;color:#888;margin-bottom:6px}
+.item .lab{display:inline-block;color:#fff;font-size:12px;padding:1px 8px;border-radius:10px;margin-left:6px}
+.kv{font-size:13px;margin:3px 0} .k{color:#1565c0;font-weight:600}
+.reason{font-size:13px;background:#fff8e1;border-left:3px solid #f9a825;padding:6px 10px;margin-top:6px;border-radius:0 4px 4px 0}
+</style></head><body>
+<header><h1>华东工单 LLM 语义重筛 · 100条测试报告</h1>
+<div class="sub">模型 deepseek-v4-flash | 来源 华东工单提取FAQ.xlsx 前100条 | 生成于 2026-08-20</div></header>
+<div class="wrap">
+<div class="summary">
+<div class="card"><div class="n" style="color:#2e7d32">68</div><div class="l">高价值</div></div>
+<div class="card"><div class="n" style="color:#ef6c00">13</div><div class="l">中价值</div></div>
+<div class="card"><div class="n" style="color:#c62828">19</div><div class="l">舍弃（额外剔除）</div></div>
+</div>
+<div class="sec"><h2>高价值（68 条）</h2>
+<div class="item">
+<div class="top">单号 FWGD26081600003 · 行号 8 · <span class="lab" style="background:#2e7d32">高价值</span></div>
+<div class="kv"><span class="k">类型</span> 运动控制异常</div>
+<div class="kv"><span class="k">现象</span> 音圈取料时零点丢失 导致偏差过大</div>
+<div class="kv"><span class="k">步骤</span> 现场刚上电 出现这个问题 大概率是上电时自动寻相失败</div>
+<div class="kv"><span class="k">结论</span> 寻相模式改为自学习后 重新寻相回原 恢复正常</div>
+<div class="reason"><b>LLM理由：</b>现象具体（零点丢失偏差大），分析定位到上电寻相失败，给出明确处置（改自学习寻相）并恢复正常，可复用技术经验。</div>
+</div>
+<div class="item">
+<div class="top">单号 FWGD26081600010 · 行号 4 · <span class="lab" style="background:#2e7d32">高价值</span></div>
+<div class="kv"><span class="k">类型</span> 运动控制异常</div>
+<div class="kv"><span class="k">现象</span> 客户反馈电机力控时电机报警</div>
+<div class="kv"><span class="k">步骤</span> 连接上位机观察电抓运行状态。当电爪执行了一段时间力控后电爪电流上升到2A以上，怀疑是电机相位角偏移导致电机在输出固定力时需要更大导致触发堵转报警</div>
+<div class="kv"><span class="k">结论</span> 电爪重新寻相后恢复正常工作</div>
+<div class="reason"><b>LLM理由：</b>现象具体（力控时报警、电流上升），分析有真实排查（上位机观察、怀疑相位角偏移），结论明确（重新寻相恢复），可复用为故障处理经验。</div>
+</div>
+<div class="item">
+<div class="top">单号 FWGD26081600004 · 行号 7 · <span class="lab" style="background:#2e7d32">高价值</span></div>
+<div class="kv"><span class="k">类型</span> 运动控制异常</div>
+<div class="kv"><span class="k">现象</span> 现场停线完善 客户进行询问 r轴上使能的情况下 手可以转动 这种情况正常吗</div>
+<div class="kv"><span class="k">步骤</span> 和客户解释 r轴能承受外力不断使能是正常的 如果一点外力便断使能的话才是不正常的 这样取料的时候 碰到料盘 才不会因为外力断使能</div>
+<div class="kv"><span class="k">结论</span> 给客户调成上使能时 手不能转动的情况 进行取料 r轴碰到料盘直接开始抖动 客户了解后 调节原参数</div>
+<div class="reason"><b>LLM理由：</b>现象具体（使能后手可转动），分析解释了正常性及调参后的后果，给出了技术结论与处理，可复用为FAQ。</div>
+</div>
+<div class="item">
+<div class="top">单号 FWGD26081600002 · 行号 9 · <span class="lab" style="background:#2e7d32">高价值</span></div>
+<div class="kv"><span class="k">类型</span> 运动控制异常</div>
+<div class="kv"><span class="k">现象</span> 现场因为大雨停线一天 今天早上启动时 驱动器连接不上</div>
+<div class="kv"><span class="k">步骤</span> 到现场进行问题复现 驱动器确实连接不上上位机 检查接线 发现现场重新上电时 动力线没有插好</div>
+<div class="kv"><span class="k">结论</span> 将动力线插好 回复正常 防止这种情况的出现 检查了a6三楼 所有音圈的接线以及运动控制</div>
+<div class="reason"><b>LLM理由：</b>现象具体（大雨后启动连接不上），排查动作真实（检查接线发现动力线未插好），结论明确处置与恢复结果，可复用为故障排查经验。</div>
+</div>
+<div class="item">
+<div class="top">单号 FWGD26081600006 · 行号 5 · <span class="lab" style="background:#2e7d32">高价值</span></div>
+<div class="kv"><span class="k">类型</span> 运动控制异常</div>
+<div class="kv"><span class="k">现象</span> R轴连续报出0X3飞车、0X6过速度、0XE位置异常、0X1C电流零点过大连锁报警。</div>
+<div class="kv"><span class="k">步骤</span> 1. 读取驱动器故障历史，R轴连续报出0X3飞车、0X6过速度、0XE位置异常、0X1C电流零点过大连锁报警。 2. 机械检查：手动盘动R轴旋转，轴承转动无明显卡滞、无异物卡顿，排除机械卡死问题。 3. 交叉验证：核对驱动器参数，重新执行驱动器电流零点标定，标定完成后运行一段时间依旧复现整套报警 4.线缆外观检查：R轴编码线缆布置在拖链内部，跟随R轴持续往复弯折；接头外观无明显破损，未发现肉眼可见断线。</div>
+<div class="kv"><span class="k">结论</span> R轴编码器线缆问题。拖链内长期往复弯折，线缆内部芯线存在虚断，或是和动力线缆同拖链带来信号干扰，造成编码器反馈信号扰动，引发整套连锁报警。 更编码器线后正常 编码器线要寄回工厂 分析编码器线内部具体问题</div>
+<div class="reason"><b>LLM理由：</b>故障现象具体，排查步骤包含历史读取、机械检查、标定验证及线缆检查，结论明确为编码器线缆问题并更换解决，具备可复用技术经验。</div>
+</div>
+<div class="item">
+<div class="top">单号 FWGD26081500065 · 行号 10 · <span class="lab" style="background:#2e7d32">高价值</span></div>
+<div class="kv"><span class="k">类型</span> 运动控制异常</div>
+<div class="kv"><span class="k">现象</span> 客户反馈电缸没有走到取料位就停止了</div>
+<div class="kv"><span class="k">步骤</span> 1.断使能手动推动看看有没有阻力 2.观察电缸运动过程中有没有受到硬限位卡阻 3.查看三环电流环P是否在正常范围</div>
+<div class="kv"><span class="k">结论</span> 结论： 电缸运动过程中受到了硬限位卡阻，导致电缸电流一瞬间变大，停在当前位置 处理： 和客户协商改硬限位位置，不要影响电缸运动</div>
+<div class="reason"><b>LLM理由：</b>现象具体，排查步骤含实际动作（手动推动、检查限位、查看电流环），结论明确给出硬限位卡阻原因及处置方案。</div>
+</div>
+<div class="item">
+<div class="top">单号 FWGD26081500056 · 行号 16 · <span class="lab" style="background:#2e7d32">高价值</span></div>
+<div class="kv"><span class="k">类型</span> 运动控制异常</div>
+<div class="kv"><span class="k">现象</span> 音圈电机上电后回零无动作，过一会报警位置偏差过大</div>
+<div class="kv"><span class="k">步骤</span> 1、根据现象描述，推测客户误组态了60E0正向扭矩限制 2、现场更改XML文件，删除正向扭矩限制的默认PDO组态 3、使用固高重新生产Gecat文件后导入正常</div>
+<div class="kv"><span class="k">结论</span> 客户误组态了60E0且只写了0导致轴无力</div>
+<div class="reason"><b>LLM理由：</b>现象具体，分析步骤有实际排查和修正动作，结论明确给出了根因与处置，可复用为FAQ经验。</div>
+</div>
+<div class="item">
+<div class="top">单号 FWGD26081500063 · 行号 11 · <span class="lab" style="background:#2e7d32">高价值</span></div>
+<div class="kv"><span class="k">类型</span> 运动控制异常</div>
+<div class="kv"><span class="k">现象</span> 更改夹爪回零方向</div>
+<div class="kv"><span class="k">步骤</span> 无需分析</div>
+<div class="kv"><span class="k">结论</span> 处理：告知客户使用1可以控制单方向回零，寄存器0301写一闭合，0张开。 结论：客户对夹爪使用不熟悉解答客户使用疑惑。</div>
+<div class="reason"><b>LLM理由：</b>给出了寄存器0301的具体操作与动作含义（写1闭合、0张开），是实打实的技术参数，可复用解答客户疑问。</div>
+</div>
+<div class="item">
+<div class="top">单号 FWGD26081500052 · 行号 17 · <span class="lab" style="background:#2e7d32">高价值</span></div>
+<div class="kv"><span class="k">类型</span> 通讯连接异常</div>
+<div class="kv"><span class="k">现象</span> 客户反馈夹爪通讯不上</div>
+<div class="kv"><span class="k">步骤</span> 1.客户反馈夹爪无法与上位机通讯 2.根据客户发来的视频，无接线错误，指示灯正常亮红灯 3.推测为通讯异常 4.公司现场测试发现夹爪485A和485B电阻为4.8M欧，明显异常且无法连接上位机</div>
+<div class="kv"><span class="k">结论</span> 结论：推断为电气原件故障 处理：经销售要求返厂维修</div>
+<div class="reason"><b>LLM理由：</b>现象具体，含实测电阻值4.8M欧异常，定位为电气故障，处置明确可复用。</div>
+</div>
+<div class="item">
+<div class="top">单号 FWGD26081500060 · 行号 12 · <span class="lab" style="background:#2e7d32">高价值</span></div>
+<div class="kv"><span class="k">类型</span> 运动控制异常</div>
+<div class="kv"><span class="k">现象</span> 音圈电机Z轴无法回零</div>
+<div class="kv"><span class="k">步骤</span> 1:上位机控制Z轴回零正常，客户PLC控制回零上位机监视位置未发生改变。 2：参看客户周配置回零未配置，6098回零方式，6099.01:寻零高速;16#6099.02:寻零低速;16#609A:寻零加速度;16#5000.05:碰撞回零电流阈值，5000.06:碰撞回零电流检测时间。</div>
+<div class="kv"><span class="k">结论</span> 处理：重新添加配置DPO，plc控制回零正常。 结论：客户程序内位置添加回零相关PDO导致控制回零异常。</div>
+<div class="reason"><b>LLM理由：</b>现象具体，通过上位机与PLC对比定位到回零PDO配置问题，列出关键参数并给出明确处置和结果，可复用性强。</div>
+</div>
+<div class="item">
+<div class="top">单号 FWGD26081500059 · 行号 13 · <span class="lab" style="background:#2e7d32">高价值</span></div>
+<div class="kv"><span class="k">类型</span> 报警提示类异常</div>
+<div class="kv"><span class="k">现象</span> 客户反馈电缸异常报警</div>
+<div class="kv"><span class="k">步骤</span> 1：现场查看工控机报警记录为客户plc端的报警的到位超时 2：PM反馈为作料过程中突然出现 3：连接DH上位机断使能拉动滑台未有卡阻感很顺滑，负载也很轻进行运动控制查看到位信号也未发现异常 4：后续想询问现场调试人员当时详细的动作情况，反馈为现场人员操作失误拔除了相应电缸线体导致，与产品无关，现场人员问题描述及操作问题</div>
+<div class="kv"><span class="k">结论</span> 结论：现场人员问题描述及操作问题 处理：上位机测试无异常，现场操作问题</div>
+<div class="reason"><b>LLM理由：</b>现象具体，排查步骤含实际动作（查看报警、手动拉动、上位机检测），结论明确为操作拔线所致，经验可复用。</div>
+</div>
+<div class="item">
+<div class="top">单号 FWGD26081500040 · 行号 23 · <span class="lab" style="background:#2e7d32">高价值</span></div>
+<div class="kv"><span class="k">类型</span> 机械结构异常</div>
+<div class="kv"><span class="k">现象</span> 夹爪末端存在高低差，不持平</div>
+<div class="kv"><span class="k">步骤</span> 1.拆下指尖工装，排查是否工装不对称 2.拆下指尖工装，拆掉指尖导向销钉，排查销钉是否无法插入电爪导向孔，导致装配指尖工装后无法完全扭紧螺丝，造成指尖工装和电爪自带指尖之间存在间隙从而导致电爪不平 3.拆下指尖工装，闭合电爪自带指尖，排查是否存在高低差 4.松掉电爪自带指尖螺丝，排查自带指尖装螺丝孔是否存在机械间隙，导致装配时出现高低差 5.更换物料重新测试，判断是否物料不平整 6.电爪旋转90°夹取物料，判断是指尖存在不平还是电爪整体存在不平 7.测量电爪与背板工件边缘的间隙，排查是否电爪没有垂直装配</div>
+<div class="kv"><span class="k">结论</span> 结论：电爪装配不垂直 处理：打磨指尖工装，补偿电爪不垂直的偏差值</div>
+<div class="reason"><b>LLM理由：</b>现象具体，排查步骤详细且包含多种验证手段，结论和处理方法明确可复用</div>
+</div>
+<div class="item">
+<div class="top">单号 FWGD26081500045 · 行号 21 · <span class="lab" style="background:#2e7d32">高价值</span></div>
+<div class="kv"><span class="k">类型</span> 机械结构异常</div>
+<div class="kv"><span class="k">现象</span> 电缸运动存在异响</div>
+<div class="kv"><span class="k">步骤</span> 1.上位机软件连接驱动器，排查是否驱动器参数问题 2.打开电缸刹车，排查是否电缸存在卡滞 3.拆除装配螺丝，排查是否螺丝干涉电缸导轨 4.排查背板工件，是否和电缸存在干涉</div>
+<div class="kv"><span class="k">结论</span> 结论：电缸运动和工件存在干涉 处理：背板工件加工，避开电缸运动行程</div>
+<div class="reason"><b>LLM理由：</b>现象具体，分析步骤包含实际排查动作，结论明确给出了干涉原因及加工避让的处置，可复用为故障排查经验。</div>
+</div>
+<div class="item">
+<div class="top">单号 FWGD26081500046 · 行号 20 · <span class="lab" style="background:#2e7d32">高价值</span></div>
+<div class="kv"><span class="k">类型</span> 力控/压力异常</div>
+<div class="kv"><span class="k">现象</span> 电缸柔性力控参数无法写入</div>
+<div class="kv"><span class="k">步骤</span> 1.排查PLC程序 发现写入SDO功能块的索引已经关联到PDO内，PDO优先级较高，SDO无法写入，修改SDO索引参数避免和PDO索引冲突 发现写入SDO功能块相关索引对应的数据长度不对，修改成对应数据长度 2.排查HMI面板 发现触摸屏关联PLC相关变量存在错乱，修改触摸屏，修改对应关联变量 个别重要参数没有开放到触摸屏，没有写入对应值，无法正常启动柔性力控功能，在触摸屏上开放相关参数</div>
+<div class="kv"><span class="k">结论</span> 结论：PLC柔性力控功能块存在BUG，HMI点位关联错乱 处理：修改优化PLC和HMI程序，修复BUG，柔性力控功能可以正常使用，并对客户进行相关培训</div>
+<div class="reason"><b>LLM理由：</b>现象具体，分析步骤包含SDO/PDO索引冲突和HMI变量错乱的真实排查与修复，结论明确，可复用为经验。</div>
+</div>
+<div class="item">
+<div class="top">单号 FWGD26081500043 · 行号 22 · <span class="lab" style="background:#2e7d32">高价值</span></div>
+<div class="kv"><span class="k">类型</span> 参数/配置异常</div>
+<div class="kv"><span class="k">现象</span> 电缸回原无法到达极限位置就判断回原完成</div>
+<div class="kv"><span class="k">步骤</span> 1.使用上位机调试软件连接驱动器进行回零，观察运动状态 2.打开电缸刹车，排查电缸是否有卡顿 3.修改回零参数，判断是否参数不对</div>
+<div class="kv"><span class="k">结论</span> 结论：回零参数不对 处理：修改参数回零转矩限制索引0X5000 子索引0X05 ：500→800，回零转矩限制时间索引0X5000 子索引0X06 ：100→200，经过修改可以正常回零，并对客户进行相关培训</div>
+<div class="reason"><b>LLM理由：</b>现象具体，分析步骤含真实排查动作，结论给出明确参数修改及结果，可复用性强。</div>
+</div>
+<div class="item">
+<div class="top">单号 FWGD26081500035 · 行号 27 · <span class="lab" style="background:#2e7d32">高价值</span></div>
+<div class="kv"><span class="k">类型</span> 产品性能功能异常</div>
+<div class="kv"><span class="k">现象</span> 现场测试电缸堵转报警，清除报警后电缸会继续运行，存在人为处理风险；</div>
+<div class="kv"><span class="k">步骤</span> 1.SAC-N电缸堵转报警功能优化后，测试稳定性，在电缸走缩回的点位途中进行堵转测试，报警清除后，电缸会继续运行到上次触发点位对应的位置； 2.常规合理情况，应该是不能直接动作，报警清除后直接退出上次的运动定位，情况同步内部优化控制逻辑；</div>
+<div class="kv"><span class="k">结论</span> 3.修改固件解决，测试稳定，最新版本固件1.4.6.后续统一发布OA；</div>
+<div class="reason"><b>LLM理由：</b>问题现象具体，分析步骤包含实际测试和逻辑优化，结论明确为固件修复并给出版本号，具备可复用技术经验。</div>
+</div>
+<div class="item">
+<div class="top">单号 FWGD26081500039 · 行号 24 · <span class="lab" style="background:#2e7d32">高价值</span></div>
+<div class="kv"><span class="k">类型</span> 技术赋能（产品培训及资料撰写）</div>
+<div class="kv"><span class="k">现象</span> 协助指导电缸静态推拉力堵转应用功能；</div>
+<div class="kv"><span class="k">步骤</span> 1.原先需求包含动态推拉力测试，测试下来，客户手指电机运行速度太快，对于柔性力控响应来说，还无法满足，先协助实现手指电机不同位置对应的静态推拉力堵转性能测试； 2.由于当前SF1驱动的力采集为正值，所以还无法同时满足推拉力切换，设定两个工位，单独测试推力和拉力； 3.电缸力控方向可以调整，具体控制逻辑与客户同步，并协助测试完成； 4.需要注意一点，就是在测试完成一个点的堵转时，电缸仍处于力控过程中，而客户又需要电缸推或者拉动下使能的手指电机移动到下个测试点，避免手指电机运行推动电缸产生超过测试需求的堵转力； 5.即使电缸断开使能情况下，测试下来，因为速度不可控，手指电机推动或拉动电缸过程产生的力也有170N，已经超过了，所以合理步骤是，当前位置测完堵转力后，电缸往回走一点，测试在20个单位的距离即可（不会拉到手指电机，有一定的连接间隙），再将手指电缸下掉使能，用电缸拉动手指电机伸出到下个测测试点，再进入力控，预压位在当前位置上加20个单位即可； 6.当前驱动版本固件存在一个bug，上述方法可以避免，就是处于力控过程的电缸，直接断掉使能，下次上使能会直接进行力控，必须先将力控达到状态，通过定位切换为到达状态，再下使能才能正常；</div>
+<div class="kv"><span class="k">结论</span> 7.客户测试需求已满足，持续产品测试中；</div>
+<div class="reason"><b>LLM理由：</b>问题明确，分析步骤详细，包含具体的测试方法、操作细节及固件bug规避措施，结论明确，可复用为经验。</div>
+</div>
+<div class="item">
+<div class="top">单号 FWGD26081500030 · 行号 29 · <span class="lab" style="background:#2e7d32">高价值</span></div>
+<div class="kv"><span class="k">类型</span> 初始化异常</div>
+<div class="kv"><span class="k">现象</span> CYG客户现场客退异常电机测试确认；</div>
+<div class="kv"><span class="k">步骤</span> 1.反馈力值偏小； 2.实际核查外观完好，测试电机原点信号正常，稳定，回零功能ok，电机定位正常，120g水平保压力60s力控精度OK;</div>
+<div class="kv"><span class="k">结论</span> 3.核查电机需返厂改制、维修，改制料号 16-15：2-V301-L630-R300，，，，，，</div>
+<div class="reason"><b>LLM理由：</b>现象具体（力值偏小），分析包含原点信号、回零、定位、力控精度等实测动作，结论明确返厂改制并给出料号，技术信息可复用。</div>
+</div>
+<div class="item">
+<div class="top">单号 FWGD26081500036 · 行号 26 · <span class="lab" style="background:#2e7d32">高价值</span></div>
+<div class="kv"><span class="k">类型</span> 其他/咨询类</div>
+<div class="kv"><span class="k">现象</span> 现场协助安装测试直线电机，配合三菱J5驱动；</div>
+<div class="kv"><span class="k">步骤</span> 1.现场协助安装搭建测试环境，协助实现正常控制运行； 2.后续电机运行发现异常，电机本体及动子发烫严重，判断电机运行电流过大，参数可能存在异常不匹配； 3.协调三菱专业技术人员配合，调整改善，大幅度降低了运行电流，节拍也满足客户需求，也纠正了客户控制参数设定不合理的地方，持续运行测试；</div>
+<div class="kv"><span class="k">结论</span> 4.电机带载运行测试正常，峰值电流也降低了，定位精度良好；</div>
+<div class="reason"><b>LLM理由：</b>故障现象具体（电机发烫），分析步骤包含真实排查（判断电流过大、参数不匹配），并给出调整改善和结果，可复用为经验。</div>
+</div>
+<div class="item">
+<div class="top">单号 FWGD26081500033 · 行号 28 · <span class="lab" style="background:#2e7d32">高价值</span></div>
+<div class="kv"><span class="k">类型</span> 力控/压力异常</div>
+<div class="kv"><span class="k">现象</span> 出加区散热A6车间现场CYG人员反馈电机保压力False异常情况增多，需求协助排查；</div>
+<div class="kv"><span class="k">步骤</span> 1.现场频繁反馈电机保压力异常偏小触发False的情况，偶发； 2.7月30号前根据现场跟进采集电机运行数据（位置、电流）对比，确认驱动电机控制正常，推断PLC内部数据处理问题，协调CYG电气30号到现场一起监控核查，确认他们内部程序采集电机保压实时转矩的滤波算法问题，也是汇川Easy521PLC取样求平均值的运算存在累计误差导致的，很明显一段时间后，计算出的实时平均电流会比每一个实际采集读到的电流数据样本小15mA左右（基本就对应5g的力），致使线性计算实际力g会慢慢持续下降，低于115g后触发报警，根据生产数据记录，存在这个情况的工位，快的情况，在5~10天就会导致下降超过这个5g阈值； 3.7月31号CYG电气已经现场修改程序测试，到当前力值都稳定的，无下降趋势，也已经在同步更新新的程序了，后续应该也会同步到苏州、珠海、武汉这些现场，避免误判电机异常；</div>
+<div class="kv"><span class="k">结论</span> 4.持续到现在运行测试稳定，可以确认已经解决，与驱动电机无关；</div>
+<div class="reason"><b>LLM理由：</b>现象具体，排查过程包含数据采集对比、定位到PLC滤波算法问题，结论明确可复用</div>
+</div>
+<div class="item">
+<div class="top">单号 FWGD26081500023 · 行号 33 · <span class="lab" style="background:#2e7d32">高价值</span></div>
+<div class="kv"><span class="k">类型</span> 运动控制异常</div>
+<div class="kv"><span class="k">现象</span> 客户新换的电机无法正常控制</div>
+<div class="kv"><span class="k">步骤</span> 1、客户反馈新更换的电机Z轴没办法控制 2、手动寻相无法成功 3、让客户将电机垂直朝下，并装上负载，再手动寻相可以成功 4、寻相成功后电机可以正常控制</div>
+<div class="kv"><span class="k">结论</span> 结论：相石驱动必须要装配电机负载并将轴垂直朝下才可以正常寻相 处理：让客户将电机垂直朝下，并装上负载，再手动寻相</div>
+<div class="reason"><b>LLM理由：</b>现象具体，分析包含真实排查动作（垂直朝下装负载再寻相），结论给出明确处置与结果，可复用为FAQ经验。</div>
+</div>
+<div class="item">
+<div class="top">单号 FWGD26081500021 · 行号 35 · <span class="lab" style="background:#2e7d32">高价值</span></div>
+<div class="kv"><span class="k">类型</span> 其他/咨询类</div>
+<div class="kv"><span class="k">现象</span> RGI-100-14-O-S-M1-L5-J0-F0这款夹爪夹紧和旋转的状态3堵转停转在什么情况下会出现？</div>
+<div class="kv"><span class="k">步骤</span> 夹持轴的3是在堵转的前提下，反馈位置=目标位置反馈掉落信号 旋转轴的3，需要配置旋转堵转停止参数，当旋转堵转电流到达后，停在当前位置且不再持续输出大的电流</div>
+<div class="kv"><span class="k">结论</span> 结论： 客户不熟悉大寰产品电气性能</div>
+<div class="reason"><b>LLM理由：</b>问题明确，答案包含具体技术参数和触发条件，如堵转前提、反馈信号、旋转堵转停止参数配置，具有可复用技术信息。</div>
+</div>
+<div class="item">
+<div class="top">单号 FWGD26081500022 · 行号 34 · <span class="lab" style="background:#2e7d32">高价值</span></div>
+<div class="kv"><span class="k">类型</span> 其他/咨询类</div>
+<div class="kv"><span class="k">现象</span> 客户咨询柔性力控相关参数是否是掉电不保持的</div>
+<div class="kv"><span class="k">步骤</span> 告知客户大部分都是掉电不保持的，所以需要力控启动之前参数重新写一遍相关参数</div>
+<div class="kv"><span class="k">结论</span> 处理： 群内解答客户疑问</div>
+<div class="reason"><b>LLM理由：</b>咨询问题明确，答案提供具体技术信息（参数掉电不保持、需启动前重写），可复用为FAQ。</div>
+</div>
+<div class="item">
+<div class="top">单号 FWGD26081500019 · 行号 36 · <span class="lab" style="background:#2e7d32">高价值</span></div>
+<div class="kv"><span class="k">类型</span> 电气性能异常</div>
+<div class="kv"><span class="k">现象</span> 夹爪异常报警</div>
+<div class="kv"><span class="k">步骤</span> 1:485连接夹爪控制夹爪运动报错欠压，让客户检查夹爪供电。 2：plc无法控制夹爪运动使用串口助手发送报文控制正常。</div>
+<div class="kv"><span class="k">结论</span> 处理：1：夹爪供电电压不足导致夹爪保存让客户检查或更换电源。 2：夹爪485通讯控制正常客户plc控制无法控制夹爪让客户检查程序。 结论：客户供电宇程序问题导致夹爪控制异常反馈客户修改夹爪控制正常。</div>
+<div class="reason"><b>LLM理由：</b>故障现象具体，分析步骤包含实际排查动作（485连接测试、串口助手控制），结论明确指出了供电和PLC程序两个原因及处理结果，可复用为FAQ。</div>
+</div>
+<div class="item">
+<div class="top">单号 FWGD26081500028 · 行号 31 · <span class="lab" style="background:#2e7d32">高价值</span></div>
+<div class="kv"><span class="k">类型</span> 参数/配置异常</div>
+<div class="kv"><span class="k">现象</span> 电爪CT过慢</div>
+<div class="kv"><span class="k">步骤</span> 1.观察电爪运动情况，确定是夹紧轴CT过慢 2.查看夹紧轴参数，排查是否参数有没有上升空间</div>
+<div class="kv"><span class="k">结论</span> 结论：电爪夹紧轴速度过慢 处理：夹紧轴夹持力设置为百分百，增加夹紧轴加速度，并对客户进行相关培训</div>
+<div class="reason"><b>LLM理由：</b>现象具体，排查动作明确（观察运动、检查参数），处置方法可复用（调整持力与加速度）</div>
+</div>
+<div class="item">
+<div class="top">单号 FWGD26081500026 · 行号 32 · <span class="lab" style="background:#2e7d32">高价值</span></div>
+<div class="kv"><span class="k">类型</span> 运动控制异常</div>
+<div class="kv"><span class="k">现象</span> 客户反馈电机驱动报警2.7</div>
+<div class="kv"><span class="k">步骤</span> 驱动默认参数R轴寻相方式是二分微动寻相，远程协助客户修改寻相方式改为自学习后断电重启无异常</div>
+<div class="kv"><span class="k">结论</span> 结论： 二分微动有时会寻相失败，需要改为自学习寻相</div>
+<div class="reason"><b>LLM理由：</b>现象具体（报警2.7），分析步骤有明确参数调整（寻相方式改为自学习）及结果，结论给出原因和处置方案，可复用为FAQ。</div>
+</div>
+<div class="item">
+<div class="top">单号 FWGD26081500018 · 行号 37 · <span class="lab" style="background:#2e7d32">高价值</span></div>
+<div class="kv"><span class="k">类型</span> 运动控制异常</div>
+<div class="kv"><span class="k">现象</span> 客户反馈夹爪旋转轴误差角度过大</div>
+<div class="kv"><span class="k">步骤</span> 1、客户反馈电机正转的时候走1°可以正常走，反转就不行 2、通过远程确认，客户电爪只在正反转切换的时候会有误差 3、告知客户这是因为夹爪旋转轴存在背隙的原因</div>
+<div class="kv"><span class="k">结论</span> 结论：因为夹爪旋转轴存在背隙，所以夹爪正反转切换时会存在误差 处理：让客户只做单方向旋转</div>
+<div class="reason"><b>LLM理由：</b>现象具体（正反转切换误差），分析定位到背隙原因，并给出明确处理建议，可复用为FAQ经验。</div>
+</div>
+<div class="item">
+<div class="top">单号 FWGD26081500016 · 行号 39 · <span class="lab" style="background:#2e7d32">高价值</span></div>
+<div class="kv"><span class="k">类型</span> 力控/压力异常</div>
+<div class="kv"><span class="k">现象</span> 夹爪保压异常无法自动返回</div>
+<div class="kv"><span class="k">步骤</span> 1：大寰上位机控制夹爪保压，保压完成可以正常返回。 2：客户程序控制夹爪保压无法自动返回，上位机采集柔性力控状态反馈15保压段，超时夹爪未返回。 3：上位机回读plc力控参数控制夹爪控制正常，保压完成正常返回。 4：让客户重新下发力控参数回读501F.1参数为3，让客户夹爪返回方式修改为1自动返回。</div>
+<div class="kv"><span class="k">结论</span> 处理：客户程序下发参数异常导致夹爪保压无法返回。 结论：重新修改夹爪力控回零参数写为1控制夹爪力控保压正常返回。</div>
+<div class="reason"><b>LLM理由：</b>现象具体，分析步骤包含对比排查和参数定位，结论明确给出处置方法，可复用为FAQ。</div>
+</div>
+<div class="item">
+<div class="top">单号 FWGD26081500017 · 行号 38 · <span class="lab" style="background:#2e7d32">高价值</span></div>
+<div class="kv"><span class="k">类型</span> 运动控制异常</div>
+<div class="kv"><span class="k">现象</span> 客户反馈电机存在异响</div>
+<div class="kv"><span class="k">步骤</span> 1、询问客户电机有无抖动现象 2、客户反馈无抖动 3、调整三环增益后，向客户确认电机异响情况有所改善 4、确认为电机刚性过高导致的抖动所引起的电机异响 5、进一步调整三环增益，问题解决</div>
+<div class="kv"><span class="k">结论</span> 结论：电机刚性过高导致的抖动所引起的电机异响 处理：调整三环增益</div>
+<div class="reason"><b>LLM理由：</b>现象具体且分析步骤含实际排查动作，结论明确处置方式与结果，可复用为经验</div>
+</div>
+<div class="item">
+<div class="top">单号 FWGD26081500049 · 行号 18 · <span class="lab" style="background:#2e7d32">高价值</span></div>
+<div class="kv"><span class="k">类型</span> 通讯连接异常</div>
+<div class="kv"><span class="k">现象</span> 实现PLC控制传感器放大器清零功能</div>
+<div class="kv"><span class="k">步骤</span> 1.查看传感器放大器相关手册，根据手册对产品进行接线 2.查看传感器放大器相关手册，对内部参数进行相关配置</div>
+<div class="kv"><span class="k">结论</span> 结论：可以实现PLC清零传感器放大器功能 处理：传感器放大器P+接24V，P-接0V，IN接PLC输出，放大器内部选择端子功能为清零，可以正常实现PLC清零传感器放大器功能，并对客户进行相关培训</div>
+<div class="reason"><b>LLM理由：</b>结论给出了具体接线方式和参数设置，可复用性高，属于明确的技术信息。</div>
+</div>
+<div class="item">
+<div class="top">单号 FWGD26081500012 · 行号 43 · <span class="lab" style="background:#2e7d32">高价值</span></div>
+<div class="kv"><span class="k">类型</span> 报警提示类异常</div>
+<div class="kv"><span class="k">现象</span> 客户描述电缸异常报警</div>
+<div class="kv"><span class="k">步骤</span> 1连接DH上位机查看报警为超限位报警，查看位置反馈3200多，清除报警 2断使能滑台移到中间上使能正常控制，165回零控制，在行程限制里查看最大限位3176 3之前出现过类似问题给定的目标位置超限位了，后续给现场人员复现问题讲解让软工做程序的相应修改</div>
+<div class="kv"><span class="k">结论</span> 结论：目标位置超出限位了 处理：软工进行程序排查改好后问题解决</div>
+<div class="reason"><b>LLM理由：</b>故障现象具体，分析步骤包含查看报警、位置反馈、限位参数等实际排查动作，结论明确给出目标位置超限的根因及程序修改处置，可复用为FAQ经验。</div>
+</div>
+<div class="item">
+<div class="top">单号 FWGD26081500014 · 行号 41 · <span class="lab" style="background:#2e7d32">高价值</span></div>
+<div class="kv"><span class="k">类型</span> 报警提示类异常</div>
+<div class="kv"><span class="k">现象</span> 客户询问相关报警是什么意思</div>
+<div class="kv"><span class="k">步骤</span> 1电话沟通，询问报警是plc端的报警还是电缸本身的报警，反馈：电缸本身 2客户连接上位机报警为伺服off时移动指令 3给客户解释为：未使能状态下发送了运动指令</div>
+<div class="kv"><span class="k">结论</span> 结论：电话沟通得知报警为伺服off时移动指令 处理：电话沟通告知客户相关意思</div>
+<div class="reason"><b>LLM理由：</b>明确了报警含义（伺服off时移动指令）及原因（未使能下发送运动指令），属于可复用的技术信息。</div>
+</div>
+<div class="item">
+<div class="top">单号 FWGD26081500015 · 行号 40 · <span class="lab" style="background:#2e7d32">高价值</span></div>
+<div class="kv"><span class="k">类型</span> 通讯连接异常</div>
+<div class="kv"><span class="k">现象</span> 客户反馈驱动器串口无法扫描</div>
+<div class="kv"><span class="k">步骤</span> 1连接DH上位机，设备管理器查找串口，显示串口扫描失败 2进行工控机其他查看尝试还是失败进行驱动相关升级，换线，加延长线换机台交叉验证问题跟随驱动器 3让现场人员排查是否有漏电情况，反馈正常机台与异常机台一样无漏电 4进行驱动器拆除跟换正常的问题未复现，问题跟随驱动器（现场协调配合时间较久问题难度选择复杂）</div>
+<div class="kv"><span class="k">结论</span> 结论：驱动器异常 处理</div>
+<div class="reason"><b>LLM理由：</b>现象具体（串口扫描失败），排查步骤包含换线、换机台交叉验证等真实动作，准确定位到驱动器异常，结论明确具可复用性。</div>
+</div>
+<div class="item">
+<div class="top">单号 FWGD26081500002 · 行号 45 · <span class="lab" style="background:#2e7d32">高价值</span></div>
+<div class="kv"><span class="k">类型</span> 其他/咨询类</div>
+<div class="kv"><span class="k">现象</span> 客户咨询相石驱动编码器端子上的具体型号</div>
+<div class="kv"><span class="k">步骤</span> 查询相石驱动手册，告知客户接头针编号：5011937000</div>
+<div class="kv"><span class="k">结论</span> 结论： 客户不了解产品信息，远程群内支持</div>
+<div class="reason"><b>LLM理由：</b>问题明确，答案提供了具体技术参数（接头针编号5011937000），可作为FAQ录入。</div>
+</div>
+<div class="item">
+<div class="top">单号 FWGD26081500001 · 行号 46 · <span class="lab" style="background:#2e7d32">高价值</span></div>
+<div class="kv"><span class="k">类型</span> 其他/咨询类</div>
+<div class="kv"><span class="k">现象</span> 客户咨询力控保压时间设置10s，为什么压硬的物体每次基本都不变的十秒钟的保压时间，软一点的东西就会偶尔压不到10秒钟就结束了</div>
+<div class="kv"><span class="k">步骤</span> 告知客户这个看什么时候进入保压段，软的和硬的不一样，软的存在形变，在形变过程中力到了就会开始计时</div>
+<div class="kv"><span class="k">结论</span> 结论： 客户不了解相关原理，远程群内解答客户疑问</div>
+<div class="reason"><b>LLM理由：</b>咨询保压时间受软硬形变影响的原理，解答了进入保压段的时机，信息具体可复用</div>
+</div>
+<div class="item">
+<div class="top">单号 FWGD26081400040 · 行号 49 · <span class="lab" style="background:#2e7d32">高价值</span></div>
+<div class="kv"><span class="k">类型</span> 报警提示类异常</div>
+<div class="kv"><span class="k">现象</span> 客户反馈夹爪指示灯异常</div>
+<div class="kv"><span class="k">步骤</span> 1.告诉客户夹爪指示灯红灯闪烁是夹爪未初始化，需要初始化才可以 2.指示灯颜色说明 未初始化状态:红灯闪烁,其他灯不亮。 初始化完成状态:蓝灯常亮,表示进入可操作的状态。 接收到命令状态:红灯快速闪烁一次(由于此时蓝灯常亮,因此夹爪指示灯会呈 现偏紫色的状态)。 夹住物体状态:绿灯常亮,其他灯不亮。 物体掉落状态:绿灯闪烁。</div>
+<div class="kv"><span class="k">结论</span> 结论；客户不了解夹爪指示灯含义 处理；告诉客户我们夹爪指示灯对应的含义</div>
+<div class="reason"><b>LLM理由：</b>客户咨询夹爪指示灯异常，提供了完整的指示灯颜色状态含义（初始化、待命、接收命令、夹持、掉落），属于可复用的技术规格信息</div>
+</div>
+<div class="item">
+<div class="top">单号 FWGD26081400028 · 行号 53 · <span class="lab" style="background:#2e7d32">高价值</span></div>
+<div class="kv"><span class="k">类型</span> 运动控制异常</div>
+<div class="kv"><span class="k">现象</span> 客户反馈电机R轴上使能抖动</div>
+<div class="kv"><span class="k">步骤</span> 1.远程连接上位机调整第一组陷波器频率至1355，写入之后电机R不抖动</div>
+<div class="kv"><span class="k">结论</span> 结论；参数不匹配导致电机抖动 处理；远程连接上位机调整第一组陷波器频率至1355，写入之后电机R不抖动</div>
+<div class="reason"><b>LLM理由：</b>现象具体，且明确调整陷波器频率至1355解决了抖动，包含可复用的技术参数和处置结果。</div>
+</div>
+<div class="item">
+<div class="top">单号 FWGD26081400039 · 行号 50 · <span class="lab" style="background:#2e7d32">高价值</span></div>
+<div class="kv"><span class="k">类型</span> 报警提示类异常</div>
+<div class="kv"><span class="k">现象</span> 客户反馈轴2报警无法复位消除</div>
+<div class="kv"><span class="k">步骤</span> 1.和客户沟通发现客户客户轴2没有接电机 2.让客户将轴2内部调试使能参数写入1，下载保存处理，客户反馈正常控制</div>
+<div class="kv"><span class="k">结论</span> 结论；驱动器参数设置不对导致 处理；让客户将轴2内部调试使能参数写入1，下载保存处理</div>
+<div class="reason"><b>LLM理由：</b>故障现象具体，排查动作明确（发现轴2未接电机，调整内部调试使能参数），结论给出参数设置错误的处置与结果，技术内容可复用。</div>
+</div>
+<div class="item">
+<div class="top">单号 FWGD26081400021 · 行号 55 · <span class="lab" style="background:#2e7d32">高价值</span></div>
+<div class="kv"><span class="k">类型</span> 通讯连接异常</div>
+<div class="kv"><span class="k">现象</span> 电爪无法正常控制</div>
+<div class="kv"><span class="k">步骤</span> 远程沟通了解到电爪在正常使用过程中突然失去控制，无法通过调试线连接大寰上位机，观察指示灯不亮，客户测量过电爪的24v与0v之间阻值只有0.6k欧，远小于正常情况下的阻值。</div>
+<div class="kv"><span class="k">结论</span> 初步判断电爪烧坏需返厂维修确认详细损坏部件，介于客户生产压力大经业务确认先作换货处理，后续若确认客责进行付费维修。</div>
+<div class="reason"><b>LLM理由：</b>现象具体（突然失控制、指示灯不亮、阻值异常），有排查动作（测量阻值），结论明确（烧坏返厂换货），可复用为故障排查经验。</div>
+</div>
+<div class="item">
+<div class="top">单号 FWGD26081400012 · 行号 57 · <span class="lab" style="background:#2e7d32">高价值</span></div>
+<div class="kv"><span class="k">类型</span> 其他/咨询类</div>
+<div class="kv"><span class="k">现象</span> 客户询问如何调夹爪的旋转分辨率</div>
+<div class="kv"><span class="k">步骤</span> 1.客户询问旋转分辨率如何从360调到3600 2.经过资料查询可知找到相关的寄存器写入3600，然后保存断电即可</div>
+<div class="kv"><span class="k">结论</span> 结论：客户不知道我们的旋转夹爪如何改分辨率 处理：在群里告知客户相关方法</div>
+<div class="reason"><b>LLM理由：</b>客户咨询具体参数调整方法，答案包含寄存器写入和断电保存的明确操作，是可复用的技术信息。</div>
+</div>
+<div class="item">
+<div class="top">单号 FWGD26081300067 · 行号 58 · <span class="lab" style="background:#2e7d32">高价值</span></div>
+<div class="kv"><span class="k">类型</span> 运动控制异常</div>
+<div class="kv"><span class="k">现象</span> 客户反馈电夹爪太热过载</div>
+<div class="kv"><span class="k">步骤</span> 1.用手去感受电夹爪的温度是不是非常高，手动推动夹爪看看是不是有异物阻挡夹爪运动导致过热 2.查看三环参数的电流环是不是过高 3.查看电夹爪处于待机位时是不是还在报堵转</div>
+<div class="kv"><span class="k">结论</span> 结论： 1.电流环P（80）过于高 2.电夹爪在待机位还在带料报堵转 处理： 1.将电流环P（80）降低到（50） 2.和客户协商在待机位时不要带料</div>
+<div class="reason"><b>LLM理由：</b>现象具体，排查步骤含实际检测电流环参数和待机状态，结论明确并给出具体处理措施，可复用为FAQ。</div>
+</div>
+<div class="item">
+<div class="top">单号 FWGD26081300062 · 行号 60 · <span class="lab" style="background:#2e7d32">高价值</span></div>
+<div class="kv"><span class="k">类型</span> 通讯连接异常</div>
+<div class="kv"><span class="k">现象</span> 客户反馈：更换新夹爪夹爪搜不到</div>
+<div class="kv"><span class="k">步骤</span> 1. 更换夹爪后，新夹爪搜不到 2. 询问客户使用什么控制方式，客户反馈为485 3. 推测客户未修改新电爪地址码 4. 修改地址码后，夹爪可搜到并正常使用</div>
+<div class="kv"><span class="k">结论</span> 修改地址码后，夹爪可搜到并正常使用</div>
+<div class="reason"><b>LLM理由：</b>现象具体，排查思路清晰，结论给出修改地址码这一可复用技术处置，可作为FAQ经验。</div>
+</div>
+<div class="item">
+<div class="top">单号 FWGD26081300060 · 行号 62 · <span class="lab" style="background:#2e7d32">高价值</span></div>
+<div class="kv"><span class="k">类型</span> 力控/压力异常</div>
+<div class="kv"><span class="k">现象</span> 客户反馈音圈电机在保压结束阶段出现跳点</div>
+<div class="kv"><span class="k">步骤</span> 7.8日研发给出关于跳点问题结论：现在就波形来看这个是现在应该是通讯周期导致的异常，实际位置生效是要比电流发生慢的，所以需要加延时等电机返回到一定位置在解开电流限制 但由于5018把正反限制都限制了会出现电流不够抬不起来现在根据这两个问题的解决方案就是1.客户程序加延时，等电机离开工件在放开限制2.李工这边修改固件，把正反转矩操作地址分开限制，这样就不会影响电机上抬动作(需要更新xml和固件) 7.10日将相关升级固件及对应XML捞进车间 7.15连接DH上位机对驱动器进行固件升级2.2.3.7升级至2.2.3.8，工控机网线连接驱动器重新配置xml，与博众软工进行plc重新配置xml及程序修改并进行作料验证两小时（4台） 7.16连接DH上位机对驱动器进行固件升级2.2.3.7升级至2.2.3.8，工控机网线连接驱动器重新配置xml，与博众软工进行plc重新配置xml及程序修改并进行作料验证两小时（4台） 7.18连接DH上位机对驱动器进行固件升级2.2.3.7升级至2.2.3.8，工控机网线连接驱动器重新配置xml，与博众软工进行plc重新配置xml及程序修改并进行作料验证两小时（4台） 7.20连接DH上位机对驱动器进行固件升级2.2.3.7升级至2.2.3.8，工控机网线连接驱动器重新配置xml，与博众软工进行plc重新配置xml及程序修改并进行作料验证两小时（4台） 7.21与现场客户AE解释及终端客户会议解释 7.26连接DH上位机对驱动器进行固件升级2.2.3.7升级至2.2.3.8，工控机网线连接驱动器重新配置xml，与博众软工进行plc重新配置xml及程序修改并进行作料验证两小时（4台） 7.27连接DH上位机对驱动器进行固件升级2.2.3.7升级至2.2.3.8，工控机网线连接驱动器重新配置xml，与博众软工进行plc重新配置xml及程序修改并进行作料验证两小时（4台） 7.28连接DH上位机对驱动器进行固件升级2.2.3.7升级至2.2.3.8，工控机网线连接驱动器重新配置xml，与博众软工进行plc重新配置xml及程序修改并进行作料验证两小时（4台） 7.31连接DH上位机对驱动器进行固件升级2.2.3.7升级至2.2.3.8，工控机网线连接驱动器重新配置xml，与博众软工进行plc重新配置xml及程序修改并进行作料验证两小时（4台） 8.2连接DH上位机对驱动器进行固件升级2.2.3.7升级至2.2.3.8，工控机网线连接驱动器重新配置xml，与博众软工进行plc重新配置xml及程序修改并进行作料验证两小时（4台） 8.4连接DH上位机对驱动器进行固件升级2.2.3.7升级至2.2.3.8，工控机网线连接驱动器重新配置xml，与博众软工进行plc重新配置xml及程序修改并进行作料验证两小时（4台） 8.5-7连接DH上位机对驱动器进行固件升级2.2.3.7升级至2.2.3.8，工控机网线连接驱动器重新配置xml，与博众软工进行plc重新配置xml及程序修改并进行作料验证两小时（8台）</div>
+<div class="kv"><span class="k">结论</span> 结论：通讯周期导致的异常，实际位置生效是要比电流发生慢的，所以需要加延时等电机返回到一定位置在解开电流限制 但由于5018把正反限制都限制了会出现电流不够抬不起来现在根据这两个问题的解决方案就是1.客户程序加延时，等电机离开工件在放开限制 处理：给客户进行相应固件升级及跑料验证</div>
+<div class="reason"><b>LLM理由：</b>故障现象具体，分析步骤包含根因定位（通讯周期导致位置生效滞后）和双解决方案（加延时/修改固件分开正反限制），处理明确（固件升级+重新配置XML+验证），可复用技术性强。</div>
+</div>
+<div class="item">
+<div class="top">单号 FWGD26081300055 · 行号 65 · <span class="lab" style="background:#2e7d32">高价值</span></div>
+<div class="kv"><span class="k">类型</span> 初始化异常</div>
+<div class="kv"><span class="k">现象</span> 电缸找原必须伸出最大位置吗，现在找原动作是先伸出到最大位，在缩回我设的位置</div>
+<div class="kv"><span class="k">步骤</span> 缩回到最里面或者伸出到最外面都可以的，他原理就是扭矩模式往一个方向走，扭矩到达预设阈值走不动就回零完成,如果不需要这么大行程，也可以自己设计硬限位挡块 伸出以后会自动再缩回来,那是控制字写错了，不要写165，直接写1 回原的速度能改吗?--可以改，但是区间不大,回零应该不影响节拍呀，太快了会影响回零精度. 登录管理员，密码AAAA，然后寄存器列表往后面翻，1400列里面有初始化速度和初始化电流，到位20-100可以直接改</div>
+<div class="kv"><span class="k">结论</span> 远程指导客户完成修改</div>
+<div class="reason"><b>LLM理由：</b>现象具体，分析步骤包含找原原理、控制字错误修正、速度/电流寄存器地址等可复用技术信息，结论明确。</div>
+</div>
+<div class="item">
+<div class="top">单号 FWGD26081300048 · 行号 68 · <span class="lab" style="background:#2e7d32">高价值</span></div>
+<div class="kv"><span class="k">类型</span> 其他/咨询类</div>
+<div class="kv"><span class="k">现象</span> 电缸异常报警堵转</div>
+<div class="kv"><span class="k">步骤</span> 查看报警代码为行程软限位异常，该报警是由于位置超出了限位导致的一上使能就报警。 指导客户连接大寰软件，查看200和300寄存器，发现行程限制为3122，但实际位置到了3200+</div>
+<div class="kv"><span class="k">结论</span> 让客户先把电缸推到中间位置再重新上使能后正常</div>
+<div class="reason"><b>LLM理由：</b>现象具体（堵转报警），分析有真实排查（查看报警代码、寄存器数值对比），结论给出明确处置（推至中间位置重新上使能）与结果，可复用为FAQ。</div>
+</div>
+<div class="item">
+<div class="top">单号 FWGD26081300047 · 行号 69 · <span class="lab" style="background:#2e7d32">高价值</span></div>
+<div class="kv"><span class="k">类型</span> 其他/咨询类</div>
+<div class="kv"><span class="k">现象</span> 客户使用一拖一盒子无法正常控制电爪</div>
+<div class="kv"><span class="k">步骤</span> 查看客户发的截图，使用的电爪但实际勾选的电缸PDO 让客户重新选择正确的电爪PDO 询问每个寄存器的意思，给客户发送手册</div>
+<div class="kv"><span class="k">结论</span> 解答客户疑问</div>
+<div class="reason"><b>LLM理由：</b>问题明确，分析中指出了错误的PDO选择并给出正确操作，是可复用的技术经验。</div>
+</div>
+<div class="item">
+<div class="top">单号 FWGD26081300036 · 行号 73 · <span class="lab" style="background:#2e7d32">高价值</span></div>
+<div class="kv"><span class="k">类型</span> 产品性能功能异常</div>
+<div class="kv"><span class="k">现象</span> 编码器线断了、客户因为线缆长、自行剪掉、导致夹爪异常、需要更换线缆</div>
+<div class="kv"><span class="k">步骤</span> 1.客户现场反馈电爪无法正常通讯使用； 2.苏州办技术远程指导； 3.编码器线断了； 4.客户因为线缆长、自行剪掉、导致夹爪异常、需要更换线缆；</div>
+<div class="kv"><span class="k">结论</span> 结论：客户因为线缆长、自行剪掉、导致夹爪异常、需要更换线缆 处理：跟客户确认后，返厂维修 先报价，待向客户确认后再进行维修，需出具检测报告</div>
+<div class="reason"><b>LLM理由：</b>现象具体（编码器线断致夹爪异常），排查步骤有定位动作，结论明确处理方式（返厂维修、报价、检测报告），可沉淀为故障案例。</div>
+</div>
+<div class="item">
+<div class="top">单号 FWGD26081300046 · 行号 70 · <span class="lab" style="background:#2e7d32">高价值</span></div>
+<div class="kv"><span class="k">类型</span> 通讯连接异常</div>
+<div class="kv"><span class="k">现象</span> 客户反馈上位机无法连接驱动器</div>
+<div class="kv"><span class="k">步骤</span> 1连接DH上位机连接失败 2查找串口，拔插显示usb串口识别失败 3进行交叉测试，初步判断为工控机机台接口的问题，换接口正常连接</div>
+<div class="kv"><span class="k">结论</span> 结论：客户机台接口问题 处理：更新驱动问题解决</div>
+<div class="reason"><b>LLM理由：</b>现象具体，分析含交叉测试等真实排查步骤，结论明确给出处置与结果，可复用为通讯连接类FAQ。</div>
+</div>
+<div class="item">
+<div class="top">单号 FWGD26081300025 · 行号 75 · <span class="lab" style="background:#2e7d32">高价值</span></div>
+<div class="kv"><span class="k">类型</span> 其他/咨询类</div>
+<div class="kv"><span class="k">现象</span> 客户询问io四组数据是否可以实时修改而不损伤记忆体</div>
+<div class="kv"><span class="k">步骤</span> 1.客户询问io四组数据是否可以实时修改而不损伤记忆体 2.根据资料的我们的夹爪如果不断电保存是不会损伤记忆体的 3.通过485通讯可以实时去修改io控制的四组参数的值</div>
+<div class="kv"><span class="k">结论</span> 结论：客户不了解io参数的修改和保存原理和方法 处理：在客户群里告知</div>
+<div class="reason"><b>LLM理由：</b>问题明确，且给出了具体技术信息：不断电保存不损伤记忆体，可通过485通讯实时修改IO参数，可复用为FAQ。</div>
+</div>
+<div class="item">
+<div class="top">单号 FWGD26081300032 · 行号 74 · <span class="lab" style="background:#2e7d32">高价值</span></div>
+<div class="kv"><span class="k">类型</span> 通讯连接异常</div>
+<div class="kv"><span class="k">现象</span> 串口通讯连接不上，阻值异常</div>
+<div class="kv"><span class="k">步骤</span> 1.客户反馈正常接线，通讯不上，通讯线阻值几千欧； 2.客户将异常电爪送到苏州办； 3.苏州办技术复测无问题，通讯正常，阻值正常； 4.与客户现场调试人员沟通后，发现未断电测量阻值； 5.对现场人员远程指导后，夹爪正常使用；</div>
+<div class="kv"><span class="k">结论</span> 结论：现场调试人员对电爪通讯与状态分辨能力较弱； 处理：对现场人员进行远程指导；</div>
+<div class="reason"><b>LLM理由：</b>现象具体，排查发现未断电测量阻值导致异常，远程指导后恢复正常，含可复用技术经验。</div>
+</div>
+<div class="item">
+<div class="top">单号 FWGD26081300011 · 行号 81 · <span class="lab" style="background:#2e7d32">高价值</span></div>
+<div class="kv"><span class="k">类型</span> 其他/咨询类</div>
+<div class="kv"><span class="k">现象</span> 客户反馈旋转夹爪如何修改分辨率</div>
+<div class="kv"><span class="k">步骤</span> 1.0X050b写入3600就是更改分辨率，之后0x0300写1保存处理</div>
+<div class="kv"><span class="k">结论</span> 结论；客户不知道如何修改夹爪分辨率 处理；告诉客户0X050b写入3600就是更改分辨率，之后0x0300写1保存处理</div>
+<div class="reason"><b>LLM理由：</b>咨询问题明确，答案含具体寄存器地址和操作步骤，可复用性强。</div>
+</div>
+<div class="item">
+<div class="top">单号 FWGD26081300013 · 行号 80 · <span class="lab" style="background:#2e7d32">高价值</span></div>
+<div class="kv"><span class="k">类型</span> 运动控制异常</div>
+<div class="kv"><span class="k">现象</span> 客户反馈电缸无法回零成功</div>
+<div class="kv"><span class="k">步骤</span> 1.客户反馈电缸无法通过-1回零成功 2.让客户配置如下参数 模式对象：0x6060 = 6（十进制，回零模式） 回零方式：0x6098 Homing method，选择回零方案（-1或者255） 回零速度：0x6099.01 Speed During Search For Switch，高速（5000） 0x6099.02 Speed During Search For Zero，低速（5000） 回零加速度：0x609A Homing acceleration （100000） 碰撞回零电流阈值：16#5000.05 HM Torque Limit 单位是千分比；设置 800 代表 0.8 倍的额定电流；（800） 碰撞回零电流检测时间：16#5000.06 HM Torque Time Limit 单位是 ms，设置 200 代表 200ms。（200） 3.客户反馈配置完对应参数后，电缸回零成功</div>
+<div class="kv"><span class="k">结论</span> 结论；客户参数配置错误导致电缸无法回零成功 处理；重新配置对应的参数，电缸回零成功</div>
+<div class="reason"><b>LLM理由：</b>问题现象具体，分析步骤详细列出了完整的回零参数配置方法，结论明确，可作为运动控制回零故障的FAQ经验。</div>
+</div>
+<div class="item">
+<div class="top">单号 FWGD26081300056 · 行号 64 · <span class="lab" style="background:#2e7d32">高价值</span></div>
+<div class="kv"><span class="k">类型</span> 运动控制异常</div>
+<div class="kv"><span class="k">现象</span> 客户反馈电机R轴太软了，不好整定</div>
+<div class="kv"><span class="k">步骤</span> 远程调整速度前馈增益及PID参数后正常。 后面客户反馈z轴找原点为什么会去正方向，正常找原的情况都是往上去。 Z轴也是在找Z相，回零完成以后走了你们程序中设定的偏置-4mm才会往上走，实际也是往下找到的Z相，然后反向走偏置了。一直往下走碰到硬限位报警的属于是你触发回零的时候他就在Z想下面，然后一直没找到Z相导致的</div>
+<div class="kv"><span class="k">结论</span> 一直往下走碰到硬限位报警的属于是你触发回零的时候他就在Z想下面，然后一直没找到Z相导致的</div>
+<div class="reason"><b>LLM理由：</b>现象具体（R轴软、Z轴回零方向异常），分析包含参数调整和回零原理，结论明确给出撞限位原因，技术内容可复用。</div>
+</div>
+<div class="item">
+<div class="top">单号 FWGD26081300010 · 行号 82 · <span class="lab" style="background:#2e7d32">高价值</span></div>
+<div class="kv"><span class="k">类型</span> 其他/咨询类</div>
+<div class="kv"><span class="k">现象</span> 1、咨询欧姆龙PLC配SAC-NF2走力控，控制电缸的使用案例 2、关于开关电源的配置</div>
+<div class="kv"><span class="k">步骤</span> 1、发送相关适配程序和SOP 2、告知客户是标准轴控，主要关注一下回零（默认碰撞回零）和柔性力控功能的使用注意事项就行 3、要求变送器/大寰驱动器的0V需要和设备隔离开，因为变送器那边是电压式的，设备本身如果存在mv波动，会对压力造成影响</div>
+<div class="kv"><span class="k">结论</span> 结论： 客户首次使用，不熟悉大寰电气产品性能</div>
+<div class="reason"><b>LLM理由：</b>咨询明确，提供了适配程序、回零注意事项及隔离要求等具体技术信息，可复用为FAQ。</div>
+</div>
+<div class="item">
+<div class="top">单号 FWGD26081200046 · 行号 86 · <span class="lab" style="background:#2e7d32">高价值</span></div>
+<div class="kv"><span class="k">类型</span> 运动控制异常</div>
+<div class="kv"><span class="k">现象</span> 客户反馈电缸使能无力</div>
+<div class="kv"><span class="k">步骤</span> 1：上位机控制电缸控制电缸使能正常。 2：使用欧姆龙plc控制电缸上使能可以轻松拉动电缸无使能。 3：参看驱动器数码管显示800，检查PLCPDO配置未添加6060和6061重新配置PDO以后PLC使能电缸控制正常。</div>
+<div class="kv"><span class="k">结论</span> 处理：客户配置PDO未添加6060操作模式与6061操作模式显示导致plc使能控制异常。 结论：PLC重新添加PDO后电缸使能控制正常。</div>
+<div class="reason"><b>LLM理由：</b>现象具体，排查步骤清晰，定位到PDO缺少6060/6061导致使能异常，给出明确配置解决方案，可复用性强。</div>
+</div>
+<div class="item">
+<div class="top">单号 FWGD26081300008 · 行号 84 · <span class="lab" style="background:#2e7d32">高价值</span></div>
+<div class="kv"><span class="k">类型</span> 机械结构异常</div>
+<div class="kv"><span class="k">现象</span> 客户现场测试电缸堵转报警功能，导致电缸丝杆连接松动；</div>
+<div class="kv"><span class="k">步骤</span> 1.客户现场配合售前测试电缸IO控制功能，及相关性能； 2.由于工况原因，共计六七次测试电缸缩回堵转报警，或者较大外力来按压电缸，导致电缸顶板螺丝松动，运行时内部也有异响，丝杆首尾两端都存连接松动情况；</div>
+<div class="kv"><span class="k">结论</span> 3.损坏电缸返厂维修检测处理，，，，，</div>
+<div class="reason"><b>LLM理由：</b>现象具体（堵转报警导致丝杆连接松动），分析含真实测试与定位动作，结论明确（返厂维修），有可复用故障信息。</div>
+</div>
+<div class="item">
+<div class="top">单号 FWGD26081200037 · 行号 88 · <span class="lab" style="background:#2e7d32">高价值</span></div>
+<div class="kv"><span class="k">类型</span> 通讯连接异常</div>
+<div class="kv"><span class="k">现象</span> 客询问PGHL夹爪使用</div>
+<div class="kv"><span class="k">步骤</span> 无需分析</div>
+<div class="kv"><span class="k">结论</span> 处理：1告知客户夹爪寄存器地址对应功能，485报文对应地址解释。 结论：客户对夹爪使用不熟悉解答客户使用疑惑。</div>
+<div class="reason"><b>LLM理由：</b>问题明确，答案提供了寄存器地址和485报文对应关系等具体技术信息，可复用为FAQ。</div>
+</div>
+<div class="item">
+<div class="top">单号 FWGD26081300009 · 行号 83 · <span class="lab" style="background:#2e7d32">高价值</span></div>
+<div class="kv"><span class="k">类型</span> 其他/咨询类</div>
+<div class="kv"><span class="k">现象</span> 客户咨询大寰双轴搭配电缸回原方式，轴配置等</div>
+<div class="kv"><span class="k">步骤</span> 1、默认不带原点信号，回原方式是：碰撞回原，反向走固定偏置定为原点 2、MCEA-4G-05-075-E2-W，编码器类型是SSI的，单圈绝对，这个断电之后还是需要回原的，需要注意设备第一次上电，需要用我们软件，进行一次寻向操作</div>
+<div class="kv"><span class="k">结论</span> 结论： 客户不熟悉大寰产品电气性能</div>
+<div class="reason"><b>LLM理由：</b>提供了具体回原方式、编码器类型及首次上电寻向要求等实打实的技术信息，可复用性强。</div>
+</div>
+<div class="item">
+<div class="top">单号 FWGD26081200035 · 行号 89 · <span class="lab" style="background:#2e7d32">高价值</span></div>
+<div class="kv"><span class="k">类型</span> 电气性能异常</div>
+<div class="kv"><span class="k">现象</span> 电缸异常报错返厂维修</div>
+<div class="kv"><span class="k">步骤</span> 1：铠批量返修电缸 技术现场查看，定制闭环力控电缸项目无堵转报警，当力传感器异常时电缸最大电流下压持续时间很长，导致电缸烧坏。保修期外返修 34405255 励磁检出错误 34405249 励磁检出错误 34401976 异响、异味 34405264 励磁检出错误 34302119 励磁检出错误 34405232 励磁检出错误 34302121 励磁检出错误 34405203 励磁检出错误 34405184 励磁检出错误 34405194 励磁检出错误 34401951 励磁检出错误</div>
+<div class="kv"><span class="k">结论</span> 压力传感器异常电缸长时间大电流，导致电缸烧坏。保修期外返修</div>
+<div class="reason"><b>LLM理由：</b>现象具体（电缸烧坏、励磁错误），分析出根因（力传感器异常致长时间大电流），结论明确可复用。</div>
+</div>
+<div class="item">
+<div class="top">单号 FWGD26081200029 · 行号 93 · <span class="lab" style="background:#2e7d32">高价值</span></div>
+<div class="kv"><span class="k">类型</span> 其他/咨询类</div>
+<div class="kv"><span class="k">现象</span> 客户咨询夹爪相关问题</div>
+<div class="kv"><span class="k">步骤</span> 1. 夹爪为什么断电不能动 2, 怎么修改夹爪回原方式</div>
+<div class="kv"><span class="k">结论</span> 1. 告知客户夹爪带抱闸，断电不能动 2. 告知客户上位机修改回原方式</div>
+<div class="reason"><b>LLM理由：</b>明确咨询夹爪断电不动原因及修改回原方式，答复给出实质技术原因（带抱闸）和操作方法（上位机修改），可复用。</div>
+</div>
+<div class="item">
+<div class="top">单号 FWGD26081200028 · 行号 94 · <span class="lab" style="background:#2e7d32">高价值</span></div>
+<div class="kv"><span class="k">类型</span> 运动控制异常</div>
+<div class="kv"><span class="k">现象</span> 客户反馈夹爪上电就堵转</div>
+<div class="kv"><span class="k">步骤</span> 1.客户反馈夹爪上电就堵转，寄到苏州办公室测试，校准零电角无明显反馈，一直显示堵转，且夹爪伴随着异常电流声音；初步判断夹爪电机异常</div>
+<div class="kv"><span class="k">结论</span> 结论；初步判断夹爪电机异常 处理；返厂维修</div>
+<div class="reason"><b>LLM理由：</b>现象具体（上电堵转、校准零电角无反馈、异常电流声），分析有实际测试动作，结论明确为电机异常并返厂维修，技术内容可复用。</div>
+</div>
+<div class="item">
+<div class="top">单号 FWGD26081200031 · 行号 91 · <span class="lab" style="background:#2e7d32">高价值</span></div>
+<div class="kv"><span class="k">类型</span> 运动控制异常</div>
+<div class="kv"><span class="k">现象</span> 客户反馈音圈电机R轴运行异常</div>
+<div class="kv"><span class="k">步骤</span> 1：客户将驱动器拆出车间寄到苏州办。 2：电机R轴失能转动R轴明显阻力大。</div>
+<div class="kv"><span class="k">结论</span> 音圈电机R轴异常查询圆光编未改制过返厂改制维修 原出货品号：2-D402-0002-X500 改制出货品号：2-D402-0002-X800 更换R轴圆光编。</div>
+<div class="reason"><b>LLM理由：</b>现象具体（R轴阻力大），排查定位到圆光编未改制并明确返厂改制更换，含可复用技术信息。</div>
+</div>
+<div class="item">
+<div class="top">单号 FWGD26081200018 · 行号 96 · <span class="lab" style="background:#2e7d32">高价值</span></div>
+<div class="kv"><span class="k">类型</span> 力控/压力异常</div>
+<div class="kv"><span class="k">现象</span> 1、客户反馈电机回零时需要多次回零才会成功 2、客户反馈压力不稳定</div>
+<div class="kv"><span class="k">步骤</span> 1、客户电源功率问题，电机回原的时候是撞击硬限位，此时电流会变大，功率不足，电源自我保护，导致驱动重启 2、客户参数设置问题，远程协助修改阻尼和质量参数后解决</div>
+<div class="kv"><span class="k">结论</span> 结论： 客户不熟悉大寰闭环力控参数设置</div>
+<div class="reason"><b>LLM理由：</b>现象具体，分析给出了电源功率和参数设置两个真实排查方向，并通过远程修改参数解决，信息可复用。</div>
+</div>
+<div class="item">
+<div class="top">单号 FWGD26081200017 · 行号 97 · <span class="lab" style="background:#2e7d32">高价值</span></div>
+<div class="kv"><span class="k">类型</span> 电气性能异常</div>
+<div class="kv"><span class="k">现象</span> 上电指示灯不亮</div>
+<div class="kv"><span class="k">步骤</span> 1.客户反馈夹爪上电指示灯不亮； 2.苏州办技术指导； 3.现场供电电源无异常，其他电爪正常运行； 4.检测电爪供电线束电阻，电阻值异常； 5.苏州办技术怀疑电爪内部元件虚焊。</div>
+<div class="kv"><span class="k">结论</span> 结论：苏州办技术怀疑电爪内部元件虚焊 处理：销售与客户沟通后，进行换货处理</div>
+<div class="reason"><b>LLM理由：</b>现象具体且分析步骤包含实际排查动作（测线束电阻、排除电源），结论明确处理方式，可作为故障排查经验。</div>
+</div>
+<div class="item">
+<div class="top">单号 FWGD26081200006 · 行号 100 · <span class="lab" style="background:#2e7d32">高价值</span></div>
+<div class="kv"><span class="k">类型</span> 运动控制异常</div>
+<div class="kv"><span class="k">现象</span> 客户反馈电机上使能无力</div>
+<div class="kv"><span class="k">步骤</span> 1.单独使用上位机可以上使能，使能有力 2.客户使用plc上使能轴2电机使能无力，对比参数轴一区别，发现轴2的0x5018被限制导致使能无力，重新调整plc参数设置</div>
+<div class="kv"><span class="k">结论</span> 结论；plc参数设置错误导致使能无力 处理；重新调整plc参数设置</div>
+<div class="reason"><b>LLM理由：</b>现象具体（使能无力），分析有对比参数并定位到0x5018限制，结论明确且处理有效，可复用为FAQ经验。</div>
+</div>
+<div class="item">
+<div class="top">单号 FWGD26081200008 · 行号 98 · <span class="lab" style="background:#2e7d32">高价值</span></div>
+<div class="kv"><span class="k">类型</span> 运动控制异常</div>
+<div class="kv"><span class="k">现象</span> 客户反馈夹爪跳齿</div>
+<div class="kv"><span class="k">步骤</span> 1.客户现场拍视频确认夹爪运行过程中会出现跳齿现象，已上传附件 2.寄到苏州办公室发现夹爪连接头线缆未寄，观察夹爪齿轮发现附着灰屑较多，怀疑是灰屑导致夹爪齿轮跳齿；初判夹爪手指基座异常，返厂查看齿轮齿条如有磨损需要更换</div>
+<div class="kv"><span class="k">结论</span> 结论；初判夹爪手指基座异常 处理；返厂维修</div>
+<div class="reason"><b>LLM理由：</b>现象具体（夹爪跳齿），有实际排查动作（视频确认、检查齿轮灰屑），给出初判原因和返厂处置，含可复用技术信息。</div>
+</div>
+<div class="item">
+<div class="top">单号 FWGD26081200020 · 行号 95 · <span class="lab" style="background:#2e7d32">高价值</span></div>
+<div class="kv"><span class="k">类型</span> 机械结构异常</div>
+<div class="kv"><span class="k">现象</span> 南宁现场返回异常DLE电机测试核查；</div>
+<div class="kv"><span class="k">步骤</span> 24802636：电机卡涩明显，导轨滑块有异物粘附，配备的滑块为最初老版本；</div>
+<div class="kv"><span class="k">结论</span> 此电机在 FWGD26062200034 这个流程内有提过改制，但内部研发确认无法改制，按照维修处理的，补提流程，，，</div>
+<div class="reason"><b>LLM理由：</b>现象具体，有实际排查动作（发现异物、确认滑块版本、核查流程），结论明确（无法改制按维修处理），具备可复用技术信息。</div>
+</div>
+<div class="item">
+<div class="top">单号 FWGD26081300024 · 行号 76 · <span class="lab" style="background:#2e7d32">高价值</span></div>
+<div class="kv"><span class="k">类型</span> 参数/配置异常</div>
+<div class="kv"><span class="k">现象</span> 客户反馈夹爪给PLC发的数值不对，一直在变化</div>
+<div class="kv"><span class="k">步骤</span> 1.客户反馈PLC读到夹爪寄存器状态反馈与位置的值一直在变化； 2.苏州办技术远程指导； 3.通过DH上位机控制夹爪，夹爪无异常，正常反馈； 4.通过对客户PLCIO映射的变量交叉引用，发现客户变量有多次循环调用； 5.更改客户重复调用的变量，夹爪寄存器反馈的值正常。</div>
+<div class="kv"><span class="k">结论</span> 结论：客户变量一直在循环发送，夹爪的寄存器读到的值一直在变化； 处理：将客户多次调用的变量更改，夹爪正常反馈当前状态。</div>
+<div class="reason"><b>LLM理由：</b>现象具体，排查步骤包含实际诊断动作（上位机控制对比、交叉引用PLC变量），结论明确给出根因和处置，可复用性强。</div>
+</div>
+</div>
+<div class="sec"><h2>中价值（13 条）</h2>
+<div class="item">
+<div class="top">单号 FWGD26081700020 · 行号 2 · <span class="lab" style="background:#ef6c00">中价值</span></div>
+<div class="kv"><span class="k">类型</span> 初始化异常</div>
+<div class="kv"><span class="k">现象</span> 客户反馈夹爪初始化异常</div>
+<div class="kv"><span class="k">步骤</span> 1. 客户反馈夹爪初始化异常 2. 远程使用上位机初始化未复现异常 3. 客户反馈行程初始化之后，IO位置偏移 4. 告知客户更换夹爪后，需要重新校准夹爪行程，并修改位置</div>
+<div class="kv"><span class="k">结论</span> 告知客户更换夹爪后，需要重新校准夹爪行程，并修改位置</div>
+<div class="reason"><b>LLM理由：</b>现象描述较笼统，但结论包含更换夹爪后需重新校准行程的可复用经验，步骤不够详细，需人工完善。</div>
+</div>
+<div class="item">
+<div class="top">单号 FWGD26081500057 · 行号 15 · <span class="lab" style="background:#ef6c00">中价值</span></div>
+<div class="kv"><span class="k">类型</span> 初始化异常</div>
+<div class="kv"><span class="k">现象</span> 驱动器卡回零模式868</div>
+<div class="kv"><span class="k">步骤</span> 回零过程中轴二出现报警位置偏差过大，清除报警后数码管显示868，此时上位机也断线无法连接</div>
+<div class="kv"><span class="k">结论</span> 之前出现过此类问题，返给研发分析未得出有效结论</div>
+<div class="reason"><b>LLM理由：</b>现象描述具体（回零报警、868代码、断线），但缺乏实际排查动作，结论未闭环且无有效处置信息，需人工补充完善。</div>
+</div>
+<div class="item">
+<div class="top">单号 FWGD26081500048 · 行号 19 · <span class="lab" style="background:#ef6c00">中价值</span></div>
+<div class="kv"><span class="k">类型</span> 机械结构异常</div>
+<div class="kv"><span class="k">现象</span> 夹爪的滑块松动</div>
+<div class="kv"><span class="k">步骤</span> 1.客户反馈夹爪滑块存在晃动现象 2.经过测试问题确实存在</div>
+<div class="kv"><span class="k">结论</span> 结论：夹爪滑块存在机械结构异常 处理：经销售要求换货</div>
+<div class="reason"><b>LLM理由：</b>现象具体且经测试确认，但结论仅写换货，未涉及根因分析或具体处置技术细节，需人工完善。</div>
+</div>
+<div class="item">
+<div class="top">单号 FWGD26081500037 · 行号 25 · <span class="lab" style="background:#ef6c00">中价值</span></div>
+<div class="kv"><span class="k">类型</span> 通讯连接异常</div>
+<div class="kv"><span class="k">现象</span> 电爪控制信号延迟</div>
+<div class="kv"><span class="k">步骤</span> 1.查看PLC程序，排查程序逻辑问题</div>
+<div class="kv"><span class="k">结论</span> 结论：PLC程序逻辑错误 处理：修改PLC程序逻辑，并对客户进行相关培训</div>
+<div class="reason"><b>LLM理由：</b>现象具体但分析步骤简略，缺乏具体排查动作与错误细节，结论有处置但需完善技术内容。</div>
+</div>
+<div class="item">
+<div class="top">单号 FWGD26081500029 · 行号 30 · <span class="lab" style="background:#ef6c00">中价值</span></div>
+<div class="kv"><span class="k">类型</span> 电气性能异常</div>
+<div class="kv"><span class="k">现象</span> 客户反馈夹爪上电无法连接上位机，并且指示灯不亮伴随发热</div>
+<div class="kv"><span class="k">步骤</span> 1、客户现场说夹爪上电指示灯不良； 2、根据出厂报告SIP没问题； 3、客户现场具体有没有接错线未知，只是说两台夹爪接线一样，这台不亮； 4、寄到苏州办技术测试，上电指示灯不亮，怀疑内部主板烧毁；</div>
+<div class="kv"><span class="k">结论</span> 结论：技术前端分析内部电路板异常； 处理：返厂拆机检修 备注：先报价，后维修</div>
+<div class="reason"><b>LLM理由：</b>现象具体且有排查步骤，但未确认根因，结论仅返厂维修，缺少最终修复结果，需人工完善。</div>
+</div>
+<div class="item">
+<div class="top">单号 FWGD26081400030 · 行号 52 · <span class="lab" style="background:#ef6c00">中价值</span></div>
+<div class="kv"><span class="k">类型</span> 其他/咨询类</div>
+<div class="kv"><span class="k">现象</span> 客户不清楚我们夹爪的指示灯红绿蓝，分别代表什么状态</div>
+<div class="kv"><span class="k">步骤</span> 1.客户询问指示灯的三种颜色都代表什么状态 2.查询手册可知相应状态</div>
+<div class="kv"><span class="k">结论</span> 结论：客户不了解指示灯三种颜色所代表的状态 处理：在群里告知客户</div>
+<div class="reason"><b>LLM理由：</b>问题明确但答案未给出指示灯具体状态含义，仅说已告知客户，缺少实打实的技术信息，需补充具体内容。</div>
+</div>
+<div class="item">
+<div class="top">单号 FWGD26081400014 · 行号 56 · <span class="lab" style="background:#ef6c00">中价值</span></div>
+<div class="kv"><span class="k">类型</span> 其他/咨询类</div>
+<div class="kv"><span class="k">现象</span> 客户不了解我们的夹爪如何连接上位机去调节夹爪参数，和上位机的选择</div>
+<div class="kv"><span class="k">步骤</span> 1.客户不了解接线方法，和上位机要求 2.查找资料得到接线方法和如何连接我们的软件 3.根据资料工控机的普遍系统存在问题，需要更换设备去连接</div>
+<div class="kv"><span class="k">结论</span> 结论：客户不了解接线方法和软件的使用，客户不了解工控机存在系统从而无法连接我们的软件问题 处理：在群里告知客户</div>
+<div class="reason"><b>LLM理由：</b>问题明确且有排查动作，但缺少具体接线方法和参数等可复用技术细节，结论仅为告知客户，需人工完善。</div>
+</div>
+<div class="item">
+<div class="top">单号 FWGD26081300057 · 行号 63 · <span class="lab" style="background:#ef6c00">中价值</span></div>
+<div class="kv"><span class="k">类型</span> 初始化异常</div>
+<div class="kv"><span class="k">现象</span> 电爪初始化异常</div>
+<div class="kv"><span class="k">步骤</span> 1.客户反馈电爪初始化异常； 2.苏州办技术复测； 3.夹爪无法正常初始化，在运动中时，旋转轴可以自由晃动； 4.夹爪丢失原点位置，异常视频随附件。</div>
+<div class="kv"><span class="k">结论</span> 结论：夹爪无法正常初始化，旋转轴异常晃动； 处理：根据客户需求，返厂检测维修 先报价，待向客户确认后再进行维修，需出具检测报告</div>
+<div class="reason"><b>LLM理由：</b>现象具体且包含处置结论，但排查动作较浅，未给出具体诊断或可复用的技术分析，需人工补充完善。</div>
+</div>
+<div class="item">
+<div class="top">单号 FWGD26081300051 · 行号 67 · <span class="lab" style="background:#ef6c00">中价值</span></div>
+<div class="kv"><span class="k">类型</span> 运动控制异常</div>
+<div class="kv"><span class="k">现象</span> 偶发性电爪失控</div>
+<div class="kv"><span class="k">步骤</span> 1.客户反馈电爪运动异常，上电初始化后在运动中，偶尔会异常运动； 2.客户将异常电爪寄到苏州办，技术复测； 3.电爪运动时，声音异常，怀疑导轨有卡阻； 4.苏州办技术循环运行，复现出客户反馈的异常，异常视频随附件；</div>
+<div class="kv"><span class="k">结论</span> 结论：电爪运动异常，运动时，发出的声音卡顿感明显； 处理：在与销售沟通后，进行换货处理；</div>
+<div class="reason"><b>LLM理由：</b>现象具体且有一定排查动作，但结论仅换货，缺少具体技术分析过程，需人工完善。</div>
+</div>
+<div class="item">
+<div class="top">单号 FWGD26081300014 · 行号 79 · <span class="lab" style="background:#ef6c00">中价值</span></div>
+<div class="kv"><span class="k">类型</span> 通讯连接异常</div>
+<div class="kv"><span class="k">现象</span> 客户反馈驱动器无法通讯</div>
+<div class="kv"><span class="k">步骤</span> 1.寄到苏州办公室SN;36504579 通电只亮绿红指示灯，USB无法连接上：初步判断通讯盒ESI未烧录 2.SN;36504578，通电指示灯不亮灯，拆开通讯盒未见明显pcb有烧毁迹象：初步判断pcb异常</div>
+<div class="kv"><span class="k">结论</span> 结论；初步判断pcb异常 处理；换货</div>
+<div class="reason"><b>LLM理由：</b>现象具体，分析有初步判断（ESI未烧录、PCB异常），但排查较浅，多为初步判断，结论为换货，需人工完善细节。</div>
+</div>
+<div class="item">
+<div class="top">单号 FWGD26081200041 · 行号 87 · <span class="lab" style="background:#ef6c00">中价值</span></div>
+<div class="kv"><span class="k">类型</span> 运动控制异常</div>
+<div class="kv"><span class="k">现象</span> 客户反馈电机无法回零成功</div>
+<div class="kv"><span class="k">步骤</span> 1.客户反馈电机R轴无法回零成功，远程连接上位机判断是R轴历史圆光编异常，让客户更换新的电机先进行使用</div>
+<div class="kv"><span class="k">结论</span> 结论；R轴电机异常 处理；更换新的电机使用</div>
+<div class="reason"><b>LLM理由：</b>现象和结论明确，但分析步骤较简略，未展开具体排查细节，需人工完善。</div>
+</div>
+<div class="item">
+<div class="top">单号 FWGD26081300066 · 行号 59 · <span class="lab" style="background:#ef6c00">中价值</span></div>
+<div class="kv"><span class="k">类型</span> 运动控制异常</div>
+<div class="kv"><span class="k">现象</span> 客户反馈三指手无法使用</div>
+<div class="kv"><span class="k">步骤</span> 1.研发现场判断左手一个电机烧了一个电机没有电流反馈</div>
+<div class="kv"><span class="k">结论</span> 结论；初判电机异常 处理；换货</div>
+<div class="reason"><b>LLM理由：</b>现象具体但分析步骤简略，结论有处置但缺少详细排查过程，需补充技术细节</div>
+</div>
+<div class="item">
+<div class="top">单号 FWGD26081200007 · 行号 99 · <span class="lab" style="background:#ef6c00">中价值</span></div>
+<div class="kv"><span class="k">类型</span> 机械结构异常</div>
+<div class="kv"><span class="k">现象</span> 车间使用异常电缸测试处理；</div>
+<div class="kv"><span class="k">步骤</span> 1.测试情况记录： 24501046：电缸尾部线缆被拽出，核查动力线断连一根，已经无法上电控制电缸运行； 34304161：电缸正极限挡块松动，电缸移动过程中会与滑台摩擦，阻力较大，严重情况会卡死；</div>
+<div class="kv"><span class="k">结论</span> 2.电缸返厂维修检测处理，，，，，</div>
+<div class="reason"><b>LLM理由：</b>故障现象描述具体，但分析步骤仅记录异常表现，未体现深入排查动作，结论为返厂维修，缺少处置细节与结果，需完善。</div>
+</div>
+</div>
+<div class="sec"><h2>舍弃（19 条）</h2>
+<div class="item">
+<div class="top">单号 FWGD26081600011 · 行号 3 · <span class="lab" style="background:#c62828">舍弃</span></div>
+<div class="kv"><span class="k">类型</span> 运动控制异常</div>
+<div class="kv"><span class="k">现象</span> 客户演示产品测试</div>
+<div class="kv"><span class="k">步骤</span> 1.测试电爪基本运动功能包括：回原，定位，扭矩控制。 2.测试电机闭环力控功能。</div>
+<div class="kv"><span class="k">结论</span> 经测试电机功能正常，可直接使用</div>
+<div class="reason"><b>LLM理由：</b>现象为演示测试，无具体故障，分析仅为测试项目列举，结论为功能正常，无技术细节可复用。</div>
+</div>
+<div class="item">
+<div class="top">单号 FWGD26081600005 · 行号 6 · <span class="lab" style="background:#c62828">舍弃</span></div>
+<div class="kv"><span class="k">类型</span> 其他/咨询类</div>
+<div class="kv"><span class="k">现象</span> 客户第一次使用大寰产品，咨询相关问题</div>
+<div class="kv"><span class="k">步骤</span> 1. 客户咨询音圈回零方式，给客户发送相关文件和说明回零原理</div>
+<div class="kv"><span class="k">结论</span> 给客户发送相关文件和说明回零原理</div>
+<div class="reason"><b>LLM理由：</b>现象和结论均无具体技术内容，仅提及发送文件说明回零原理，无实质信息。</div>
+</div>
+<div class="item">
+<div class="top">单号 FWGD26081500058 · 行号 14 · <span class="lab" style="background:#c62828">舍弃</span></div>
+<div class="kv"><span class="k">类型</span> 机械结构异常</div>
+<div class="kv"><span class="k">现象</span> 电缸本体连接处晃动</div>
+<div class="kv"><span class="k">步骤</span> 无需分析</div>
+<div class="kv"><span class="k">结论</span> 处理：电缸本体存在明显晃动业务反馈换货。</div>
+<div class="reason"><b>LLM理由：</b>现象描述笼统，无分析步骤，结论仅说换货，无技术细节。</div>
+</div>
+<div class="item">
+<div class="top">单号 FWGD26081500013 · 行号 42 · <span class="lab" style="background:#c62828">舍弃</span></div>
+<div class="kv"><span class="k">类型</span> 其他/咨询类</div>
+<div class="kv"><span class="k">现象</span> 客户反馈需要相应电缸操作手册</div>
+<div class="kv"><span class="k">步骤</span> 1将相应操作手册及对应上位机操作手册发给客户</div>
+<div class="kv"><span class="k">结论</span> 结论：客户需要相应电缸操作手册 处理：发给客户相关手册</div>
+<div class="reason"><b>LLM理由：</b>仅为发送手册的资料传递，无实打实技术信息，属套话结论。</div>
+</div>
+<div class="item">
+<div class="top">单号 FWGD26081400045 · 行号 47 · <span class="lab" style="background:#c62828">舍弃</span></div>
+<div class="kv"><span class="k">类型</span> 机械结构异常</div>
+<div class="kv"><span class="k">现象</span> 电爪撞击损坏</div>
+<div class="kv"><span class="k">步骤</span> 客户反馈电爪受到撞击导致损坏，付费维修</div>
+<div class="kv"><span class="k">结论</span> 客户反馈电爪受到撞击导致损坏，付费维修</div>
+<div class="reason"><b>LLM理由：</b>现象与结论均为重复描述，无技术细节或分析动作，属于纯噪声。</div>
+</div>
+<div class="item">
+<div class="top">单号 FWGD26081500003 · 行号 44 · <span class="lab" style="background:#c62828">舍弃</span></div>
+<div class="kv"><span class="k">类型</span> 通讯连接异常</div>
+<div class="kv"><span class="k">现象</span> 客户反馈驱动器需要刷成1.7.2的xml版本</div>
+<div class="kv"><span class="k">步骤</span> 1.远程指导客户通过上位机刷新成客户需要1.7.2版本的xml，录制对应的视频给客户参考</div>
+<div class="kv"><span class="k">结论</span> 结论；客户不知道如何更新xml版本 处理；远程指导客户通过上位机刷新成客户需要1.7.2版本的xml，录制对应的视频给客户参考</div>
+<div class="reason"><b>LLM理由：</b>现象为操作需求，但分析仅描述远程指导与录视频，无具体技术参数或操作细节，属套话结论。</div>
+</div>
+<div class="item">
+<div class="top">单号 FWGD26081400036 · 行号 51 · <span class="lab" style="background:#c62828">舍弃</span></div>
+<div class="kv"><span class="k">类型</span> 其他/咨询类</div>
+<div class="kv"><span class="k">现象</span> 客户现场人员咨询音圈控制原理</div>
+<div class="kv"><span class="k">步骤</span> 1. 客户现场人员咨询音圈控制原理 2. 询问问题：音圈和驱动器之间使用什么通讯，驱动器如何与上位机通讯 3. 解答客户问题，给客户发送音圈使用文档 4. 由于苹果客户想要了解我们的产品，给客户发送音圈英文介绍手册</div>
+<div class="kv"><span class="k">结论</span> 由于苹果客户想要了解我们的产品，给客户发送音圈英文介绍手册</div>
+<div class="reason"><b>LLM理由：</b>咨询类但仅发送文档，无具体技术内容，属套话处理。</div>
+</div>
+<div class="item">
+<div class="top">单号 FWGD26081400042 · 行号 48 · <span class="lab" style="background:#c62828">舍弃</span></div>
+<div class="kv"><span class="k">类型</span> 其他/咨询类</div>
+<div class="kv"><span class="k">现象</span> 客户咨询夹爪初始化操作</div>
+<div class="kv"><span class="k">步骤</span> 1. 客户咨询夹爪初始化操作 2. 客户初次调试我们夹爪，告知客户如何通过1-4EC通讯盒控制夹爪初始化 3. 给客户提供手册，并告知基础参数如何调试 4. 电话告知客户使用方法</div>
+<div class="kv"><span class="k">结论</span> 电话告知客户使用方法</div>
+<div class="reason"><b>LLM理由：</b>咨询类但仅记录‘告知客户使用方法’，未包含任何具体操作参数或技术细节，属于套话结论。</div>
+</div>
+<div class="item">
+<div class="top">单号 FWGD26081400027 · 行号 54 · <span class="lab" style="background:#c62828">舍弃</span></div>
+<div class="kv"><span class="k">类型</span> 外观瑕疵</div>
+<div class="kv"><span class="k">现象</span> 新收到产品外观有瑕疵</div>
+<div class="kv"><span class="k">步骤</span> 1、客户开箱发现外观有瑕疵，有字体痕迹</div>
+<div class="kv"><span class="k">结论</span> 结论：产品开箱瑕疵 处理：换货</div>
+<div class="reason"><b>LLM理由：</b>现象和结论均为简单换货，无技术信息或排查动作，属于纯噪声。</div>
+</div>
+<div class="item">
+<div class="top">单号 FWGD26081300061 · 行号 61 · <span class="lab" style="background:#c62828">舍弃</span></div>
+<div class="kv"><span class="k">类型</span> 运动控制异常</div>
+<div class="kv"><span class="k">现象</span> 客户反馈电缸报警</div>
+<div class="kv"><span class="k">步骤</span> 1. 客户反馈报警，到现场时已恢复生产 2. 陪产2H未出现报警 3. 教客户使用上位机，下次报警时记录报警内容</div>
+<div class="kv"><span class="k">结论</span> 陪产2H未出现报警 教客户使用上位机，下次报警时记录报警内容</div>
+<div class="reason"><b>LLM理由：</b>现象笼统，无具体排查与处置，仅为陪产观察和教导记录，无技术价值。</div>
+</div>
+<div class="item">
+<div class="top">单号 FWGD26081300054 · 行号 66 · <span class="lab" style="background:#c62828">舍弃</span></div>
+<div class="kv"><span class="k">类型</span> 其他/咨询类</div>
+<div class="kv"><span class="k">现象</span> 客户旧设备使用ISD驱动器，需要使用说明书</div>
+<div class="kv"><span class="k">步骤</span> 给客户发送说明文档</div>
+<div class="kv"><span class="k">结论</span> 给客户发送文档</div>
+<div class="reason"><b>LLM理由：</b>仅发送说明书，无技术细节，属资料发放类记录。</div>
+</div>
+<div class="item">
+<div class="top">单号 FWGD26081300043 · 行号 71 · <span class="lab" style="background:#c62828">舍弃</span></div>
+<div class="kv"><span class="k">类型</span> 其他/咨询类</div>
+<div class="kv"><span class="k">现象</span> 客户反馈想要了解相关NP2对应上位机基础操作</div>
+<div class="kv"><span class="k">步骤</span> 1现场与现场人员解答指导相关上位机的基础操作</div>
+<div class="kv"><span class="k">结论</span> 结论：告知客户相关的上位机基础操作</div>
+<div class="reason"><b>LLM理由：</b>只有套话‘告知基础操作’，无任何具体技术内容或操作细节，无法复用。</div>
+</div>
+<div class="item">
+<div class="top">单号 FWGD26081300041 · 行号 72 · <span class="lab" style="background:#c62828">舍弃</span></div>
+<div class="kv"><span class="k">类型</span> 机械结构异常</div>
+<div class="kv"><span class="k">现象</span> 客户反馈夹爪指尖过短需要返厂改制新的指尖长度</div>
+<div class="kv"><span class="k">步骤</span> 1.客户需要将夹爪返厂改制加长指尖 2.夹爪返厂检查异常卡死问题</div>
+<div class="kv"><span class="k">结论</span> 返厂改制</div>
+<div class="reason"><b>LLM理由：</b>现象和结论均为流程性描述，无具体技术参数、诊断动作或可复用经验，属噪声记录。</div>
+</div>
+<div class="item">
+<div class="top">单号 FWGD26081300022 · 行号 77 · <span class="lab" style="background:#c62828">舍弃</span></div>
+<div class="kv"><span class="k">类型</span> 其他/咨询类</div>
+<div class="kv"><span class="k">现象</span> 客户想要远程实机了解我们产品的性能</div>
+<div class="kv"><span class="k">步骤</span> 1.客户想要远程了解实机的带物料的夹爪节拍 2.远程给客户展示实际的节拍 3.实际节拍和产品手册上相符</div>
+<div class="kv"><span class="k">结论</span> 结论：客户想了解产品的实际性能 处理：通过远程视频会议展示</div>
+<div class="reason"><b>LLM理由：</b>仅为远程产品演示，无具体技术参数或排查动作</div>
+</div>
+<div class="item">
+<div class="top">单号 FWGD26081300019 · 行号 78 · <span class="lab" style="background:#c62828">舍弃</span></div>
+<div class="kv"><span class="k">类型</span> 其他/咨询类</div>
+<div class="kv"><span class="k">现象</span> 客户询问是否可以外接传感器回原，以及回原精度和定位精度。</div>
+<div class="kv"><span class="k">步骤</span> 1.客户询问外接传感器回原，以及回原精度定位精度 2.查找相关资料</div>
+<div class="kv"><span class="k">结论</span> 结论：客户不清楚我门电缸的参数和外接传感器问题 处理：在群里告知</div>
+<div class="reason"><b>LLM理由：</b>仅记录客户咨询和‘群里告知’等套话，未提供具体参数或回原精度等实质技术信息</div>
+</div>
+<div class="item">
+<div class="top">单号 FWGD26081300007 · 行号 85 · <span class="lab" style="background:#c62828">舍弃</span></div>
+<div class="kv"><span class="k">类型</span> 其他/咨询类</div>
+<div class="kv"><span class="k">现象</span> 协助工厂使用C#小程序实时抓取称重夹爪重量和温度反馈</div>
+<div class="kv"><span class="k">步骤</span> 远程修改C#串口号，协助工厂人员使用小程序抓取数据</div>
+<div class="kv"><span class="k">结论</span> 结论： 远程协助工厂人员进行电爪性能测试</div>
+<div class="reason"><b>LLM理由：</b>内容为远程协助抓取数据的流水账，无具体技术参数、排查动作或可复用结论，纯配合记录。</div>
+</div>
+<div class="item">
+<div class="top">单号 FWGD26081200032 · 行号 90 · <span class="lab" style="background:#c62828">舍弃</span></div>
+<div class="kv"><span class="k">类型</span> 参数/配置异常</div>
+<div class="kv"><span class="k">现象</span> 客户反馈夹爪容易掉使能</div>
+<div class="kv"><span class="k">步骤</span> 客户反馈夹爪很久没有，用手触摸夹爪，夹爪容易掉使能，要求调参</div>
+<div class="kv"><span class="k">结论</span> 参考旁边设备参数进行微调，按照客户要求现场陪产2H</div>
+<div class="reason"><b>LLM理由：</b>现象与结论均无有效技术细节，仅描述调参和陪产，无诊断动作与结果。</div>
+</div>
+<div class="item">
+<div class="top">单号 FWGD26081200030 · 行号 92 · <span class="lab" style="background:#c62828">舍弃</span></div>
+<div class="kv"><span class="k">类型</span> 其他/咨询类</div>
+<div class="kv"><span class="k">现象</span> 客户询问驱动通讯问题与音圈供电问题</div>
+<div class="kv"><span class="k">步骤</span> 1.客户咨询驱动器通讯问题； 2.苏州办技术远程处理； 3.帮助客户建立通讯，并且解决客户对于供电电压24V与48V区别的问题</div>
+<div class="kv"><span class="k">结论</span> 结论：客户提出对驱动通讯问题与音圈供电问题； 处理：针对客户问题，远程解决</div>
+<div class="reason"><b>LLM理由：</b>现象和结论均无具体技术内容，仅描述远程处理，未涉及通讯参数或24V/48V供电差异的具体解答。</div>
+</div>
+<div class="item">
+<div class="top">单号 FWGD26081200005 · 行号 101 · <span class="lab" style="background:#c62828">舍弃</span></div>
+<div class="kv"><span class="k">类型</span> 通讯连接异常</div>
+<div class="kv"><span class="k">现象</span> 驱动面板上电显示8.8.8.</div>
+<div class="kv"><span class="k">步骤</span> 苏州办复测，驱动面板显示8.8.8.</div>
+<div class="kv"><span class="k">结论</span> 处理： 因出厂时间大于3个月，与业务沟通返厂维修</div>
+<div class="reason"><b>LLM理由：</b>现象与结论均无技术细节，仅为确认故障后返厂维修，无可复用经验。</div>
+</div>
+</div>
+</div></body></html>
