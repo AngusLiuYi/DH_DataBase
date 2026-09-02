@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>技术支持 FAQ TOP20 类问题</title>
+<style>
+  :root {
+    --bg: #ffffff; --surface: #f7f7f5; --line: #e3e2dd;
+    --text: #23231f; --muted: #6b6a64; --accent: #185FA5;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 32px 28px 64px; background: var(--bg); color: var(--text);
+    font-family: system-ui, -apple-system, "Segoe UI", "Microsoft YaHei", sans-serif;
+    font-size: 14px; line-height: 1.7;
+  }
+  .wrap { max-width: 1180px; margin: 0 auto; }
+  h1 { font-size: 24px; font-weight: 600; margin: 0 0 6px; }
+  .meta { color: var(--muted); font-size: 13px; margin-bottom: 24px; }
+  h2 { font-size: 17px; font-weight: 600; margin: 36px 0 12px;
+        padding-bottom: 8px; border-bottom: 1px solid var(--line); }
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; }
+  .card { background: var(--surface); border-radius: 8px; padding: 14px 16px; }
+  .card .l { font-size: 12px; color: var(--muted); }
+  .card .v { font-size: 24px; font-weight: 600; margin-top: 2px; }
+  .card .s { font-size: 12px; color: var(--muted); }
+  table { width: 100%; border-collapse: collapse; margin-top: 8px; }
+  th, td { text-align: left; padding: 10px 10px; vertical-align: top;
+            border-bottom: 1px solid var(--line); }
+  th { font-size: 12px; font-weight: 600; color: var(--muted);
+        background: var(--surface); white-space: nowrap; }
+  td.num { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
+  td.rank { font-size: 13px; color: var(--muted); width: 28px; padding-top: 14px; }
+  td.cat { min-width: 380px; }
+  td.sub { font-size: 12px; color: var(--muted); white-space: nowrap; }
+  .cat-name { font-weight: 600; }
+  .bar-track { width: 100%; max-width: 300px; height: 8px; background: #ecebe7;
+                border-radius: 4px; margin: 6px 0 8px; overflow: hidden; }
+  .bar-fill { height: 100%; border-radius: 4px; }
+  ul.ex { margin: 0 0 6px; padding-left: 18px; color: var(--muted); font-size: 13px; }
+  ul.ex li { margin-bottom: 2px; }
+  details summary { cursor: pointer; font-size: 12px; color: var(--accent);
+                     list-style: none; outline: none; }
+  details summary::-webkit-details-marker { display: none; }
+  details summary::before { content: "▸ "; }
+  details[open] summary::before { content: "▾ "; }
+  .case { background: var(--surface); border-radius: 6px; padding: 10px 12px;
+           margin-top: 8px; font-size: 13px; }
+  .case p { margin: 4px 0; }
+  .tag { display: inline-block; min-width: 34px; font-size: 11px; color: #fff;
+          background: #888780; border-radius: 3px; padding: 0 5px; margin-right: 6px;
+          text-align: center; }
+  .bwrap { width: 22%; }
+  .off-fill { height: 8px; background: #85B7EB; border-radius: 4px; }
+  .note { background: var(--surface); border-left: 3px solid #EF9F27;
+           border-radius: 0 6px 6px 0; padding: 12px 16px; font-size: 13px; margin: 12px 0; }
+  .find { background: var(--surface); border-radius: 8px; padding: 4px 20px 12px;
+           margin: 12px 0; }
+  .find li { margin: 10px 0; }
+  code { background: #f0efec; border-radius: 3px; padding: 1px 5px; font-size: 12px; }
+  footer { margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--line);
+            font-size: 12px; color: var(--muted); }
+  @media print { body { padding: 0; } details { display: none; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>技术支持 FAQ TOP20 类问题</h1>
+<div class="meta">
+  数据源：<code>raw/fae-qa/华东工单提取仅技术服务&amp;高价值FAQ_20260820.xlsx</code>　·
+  统计日期：2026-08-31　·　生成脚本：<code>scripts/gen_faq_report.py</code>
+</div>
+
+<div class="cards">
+  <div class="card"><div class="l">统计基数</div><div class="v">2772</div>
+    <div class="s">全量工单，含【禁】标记 1131 条</div></div>
+  <div class="card"><div class="l">时间跨度</div><div class="v" style="font-size:16px;">2026-01-01 ~ 2026-08-17</div>
+    <div class="s">按实际服务时间</div></div>
+  <div class="card"><div class="l">前三类合计</div><div class="v">41.0%</div>
+    <div class="s">1137 条</div></div>
+  <div class="card"><div class="l">TOP20 覆盖</div><div class="v">91.4%</div>
+    <div class="s">未分类 208 条（7.5%）</div></div>
+</div>
+
+<h2>统计口径</h2>
+<div class="note">
+  <b>【禁】类工单按正常数据统计。</b>「问题类型」列带【禁】前缀的类别（客户应用使用 840 /
+  简易咨询 213 / 产品选型 37 等，合计 1131 条），是分类体系更新细化后停止新登记使用，
+  <b>数据本身有效</b>，本次全部计入统计，未做剔除。<br>
+  分类方法：关键词规则聚类，只取「问题现象描述」字段，按优先级归入唯一类别（主标签）。
+  同一工单若涉及多主题只计一次，因此<b>占比之和为 100%，不等于"提及率"</b>。
+</div>
+
+<h2>TOP20 类问题</h2>
+<table>
+  <thead>
+    <tr><th>#</th><th>问题类别 / 典型现象</th><th class="num">条数</th>
+        <th class="num">占比</th><th>主产品线</th><th>主要根因</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="rank">1</td>
+      <td class="cat">
+        <div class="cat-name">初始化/回零/寻相失败</div>
+        <div class="bar"><div class="bar-track"><div class="bar-fill" style="width:100.0%;background:#D85A30"></div></div></div>
+        <ul class="ex"><li>客户反馈行程初始化之后，IO位置偏移</li><li>音圈取料时零点丢失 导致偏差过大</li><li>音圈电机上电后回零无动作，过一会报警位置偏差过大</li></ul>
+        <details>
+          <summary>代表工单</summary>
+          <div class="case">
+            <p><span class="tag">现象</span>客户反馈行程初始化之后，IO位置偏移</p>
+            <p><span class="tag">结论</span>告知客户更换夹爪后，需要重新校准夹爪行程，并修改位置</p>
+            <p><span class="tag">根因</span>客户参数设置不当　<span class="tag">型号</span>PGE-15-10-O-B-M1-LX-0</p>
+          </div>
+        </details>
+      </td>
+      <td class="num">450</td>
+      <td class="num">16.2%</td>
+      <td class="sub">电爪 193<br>电缸 135<br>音圈/直驱 114</td>
+      <td class="sub">客户应用问题 154<br>客户参数设置不当 66<br>其他/咨询类指导 53</td>
+    </tr>
+    <tr>
+      <td class="rank">2</td>
+      <td class="cat">
+        <div class="cat-name">力控/压力/夹持力异常</div>
+        <div class="bar"><div class="bar-track"><div class="bar-fill" style="width:77.1%;background:#D85A30"></div></div></div>
+        <ul class="ex"><li>电缸柔性力控参数无法写入</li><li>出加区散热A6车间现场CYG人员反馈电机保压力False异常情况增多，需求协助排查；</li><li>客户咨询柔性力控相关参数是否是掉电不保持的</li></ul>
+        <details>
+          <summary>代表工单</summary>
+          <div class="case">
+            <p><span class="tag">现象</span>出加区散热A6车间现场CYG人员反馈电机保压力False异常情况增多，需求协助排查；</p>
+            <p><span class="tag">结论</span>4.持续到现在运行测试稳定，可以确认已经解决，与驱动电机无关；</p>
+            <p><span class="tag">根因</span>客户程序/控制逻辑错误　<span class="tag">型号</span>VLA-25-25-M2-24-B</p>
+          </div>
+        </details>
+      </td>
+      <td class="num">347</td>
+      <td class="num">12.5%</td>
+      <td class="sub">电爪 145<br>电缸 129<br>音圈/直驱 61</td>
+      <td class="sub">客户应用问题 141<br>其他/咨询类指导 49<br>客户参数设置不当 38</td>
+    </tr>
+    <tr>
+      <td class="rank">3</td>
+      <td class="cat">
+        <div class="cat-name">报警代码/报错停机</div>
+        <div class="bar"><div class="bar-track"><div class="bar-fill" style="width:75.6%;background:#D85A30"></div></div></div>
+        <ul class="ex"><li>客户反馈电机力控时电机报警</li><li>现场测试电缸堵转报警，清除报警后电缸会继续运行，存在人为处理风险；</li><li>客户反馈电机驱动报警2.7</li></ul>
+        <details>
+          <summary>代表工单</summary>
+          <div class="case">
+            <p><span class="tag">现象</span>现场测试电缸堵转报警，清除报警后电缸会继续运行，存在人为处理风险；</p>
+            <p><span class="tag">结论</span>3.修改固件解决，测试稳定，最新版本固件1.4.6.后续统一发布OA；</p>
+            <p><span class="tag">根因</span>固件/软件BUG　<span class="tag">型号</span>【C】MCEA-3WG-02-030-E1-O-F1-LX</p>
+          </div>
+        </details>
+      </td>
+      <td class="num">340</td>
+      <td class="num">12.3%</td>
+      <td class="sub">音圈/直驱 125<br>电缸 117<br>电爪 72</td>
+      <td class="sub">客户应用问题 113<br>客户参数设置不当 48<br>客户接线错误/松动 23</td>
+    </tr>
+    <tr>
+      <td class="rank">4</td>
+      <td class="cat">
+        <div class="cat-name">无法控制/不动作/运行异常</div>
+        <div class="bar"><div class="bar-track"><div class="bar-fill" style="width:42.2%;background:#378ADD"></div></div></div>
+        <ul class="ex"><li>客户反馈电缸没有走到取料位就停止了</li><li>客户新换的电机无法正常控制</li><li>客户使用一拖一盒子无法正常控制电爪</li></ul>
+        <details>
+          <summary>代表工单</summary>
+          <div class="case">
+            <p><span class="tag">现象</span>客户反馈现场一台夹爪重新上电后无法控制</p>
+            <p><span class="tag">结论</span>客户现场使用电源电压较低导致问题，将电压调大，重新校准后恢复正常</p>
+            <p><span class="tag">根因</span>供电问题　<span class="tag">型号</span>【C】PGE-200-30-W-F-M1-L5-J0-F0-00-0</p>
+          </div>
+        </details>
+      </td>
+      <td class="num">190</td>
+      <td class="num">6.9%</td>
+      <td class="sub">电爪 67<br>电缸 62<br>音圈/直驱 47</td>
+      <td class="sub">客户应用问题 61<br>客户参数设置不当 26<br>客户使用不当/误操作 20</td>
+    </tr>
+    <tr>
+      <td class="rank">5</td>
+      <td class="cat">
+        <div class="cat-name">选型/替换/规格咨询</div>
+        <div class="bar"><div class="bar-track"><div class="bar-fill" style="width:34.7%;background:#378ADD"></div></div></div>
+        <ul class="ex"><li>客户咨询PGC和PGI系统的控制方式和控制协议有什么差别</li><li>客户咨询电缸RCEA-3M-01-050-C最大电流是多少</li><li>客户反馈想咨询相关电爪使用</li></ul>
+        <details>
+          <summary>代表工单</summary>
+          <div class="case">
+            <p><span class="tag">现象</span>客户咨询电缸RCEA-3M-01-050-C最大电流是多少</p>
+            <p><span class="tag">结论</span>结论；客户不了解电缸参数说明 处理；告诉客户这款电缸最大力200N，对应的额定电流为1.5A，实际可用压力传感器标定，看一下实际电缸的电流反馈</p>
+            <p><span class="tag">根因</span>其他/咨询类指导　<span class="tag">型号</span>RCEA-3M-01-050-C-O-F</p>
+          </div>
+        </details>
+      </td>
+      <td class="num">156</td>
+      <td class="num">5.6%</td>
+      <td class="sub">电爪 88<br>电缸 46<br>音圈/直驱 20</td>
+      <td class="sub">客户应用问题 89<br>其他/咨询类指导 52<br>客户参数设置不当 3</td>
+    </tr>
+    <tr>
+      <td class="rank">6</td>
+      <td class="cat">
+        <div class="cat-name">抖动/异响/噪音</div>
+        <div class="bar"><div class="bar-track"><div class="bar-fill" style="width:23.8%;background:#378ADD"></div></div></div>
+        <ul class="ex"><li>客户反馈电机R轴上使能抖动</li><li>客户反馈电机R轴太软了，不好整定</li><li>客户反馈音圈电机r轴抖动异响。</li></ul>
+        <details>
+          <summary>代表工单</summary>
+          <div class="case">
+            <p><span class="tag">现象</span>QT散热音圈电机更换压头，调试反馈电机抖动；</p>
+            <p><span class="tag">结论</span>4.电机负载变化，协助重新调参解决；</p>
+            <p><span class="tag">根因</span>外部环境因素　<span class="tag">型号</span>【C】VLA-16-15-M2-24-B-FB-1</p>
+          </div>
+        </details>
+      </td>
+      <td class="num">107</td>
+      <td class="num">3.9%</td>
+      <td class="sub">音圈/直驱 62<br>电爪 22<br>电缸 14</td>
+      <td class="sub">客户参数设置不当 44<br>客户应用问题 19<br>0006 8</td>
+    </tr>
+    <tr>
+      <td class="rank">7</td>
+      <td class="cat">
+        <div class="cat-name">参数/寄存器/模式配置</div>
+        <div class="bar"><div class="bar-track"><div class="bar-fill" style="width:23.3%;background:#378ADD"></div></div></div>
+        <ul class="ex"><li>客户反馈进行相应参数修改会跳变</li><li>客户咨询关于夹爪IO设置的配置问题</li><li>客户反馈驱动器无法进入888模式</li></ul>
+        <details>
+          <summary>代表工单</summary>
+          <div class="case">
+            <p><span class="tag">现象</span>新到的驱动器，需要更新参数匹配原有的电缸</p>
+            <p><span class="tag">结论</span>结论：新驱动器参数不对； 处理：将旧驱动器参数导入新驱动器；</p>
+            <p><span class="tag">根因</span>其他/咨询类指导　<span class="tag">型号</span>MCEA-4G-05-150-E2-W</p>
+          </div>
+        </details>
+      </td>
+      <td class="num">105</td>
+      <td class="num">3.8%</td>
+      <td class="sub">电爪 45<br>音圈/直驱 28<br>电缸 27</td>
+      <td class="sub">客户应用问题 41<br>其他/咨询类指导 31<br>客户参数设置不当 19</td>
+    </tr>
+    <tr>
+      <td class="rank">8</td>
+      <td class="cat">
+        <div class="cat-name">EtherCAT/总线通讯异常</div>
+        <div class="bar"><div class="bar-track"><div class="bar-fill" style="width:22.0%;background:#378ADD"></div></div></div>
+        <ul class="ex"><li>客户反馈：更换新夹爪夹爪搜不到</li><li>客户调试EC转接盒控制夹爪，PLC无法通讯连接上；</li><li>客户调试控制力控电缸，反馈通讯不上，无法控制使能；</li></ul>
+        <details>
+          <summary>代表工单</summary>
+          <div class="case">
+            <p><span class="tag">现象</span>客户调试EC转接盒控制夹爪，PLC无法通讯连接上；</p>
+            <p><span class="tag">结论</span>6.协助处理完成，后续客户应用稳定；</p>
+            <p><span class="tag">根因</span>固件/软件BUG　<span class="tag">型号</span>RGIC-35-12-O-B-M1</p>
+          </div>
+        </details>
+      </td>
+      <td class="num">99</td>
+      <td class="num">3.6%</td>
+      <td class="sub">电爪 49<br>电缸 25<br>音圈/直驱 15</td>
+      <td class="sub">客户应用问题 40<br>客户参数设置不当 12<br>客户程序/控制逻辑错误 9</td>
+    </tr>
+    <tr>
+      <td class="rank">9</td>
+      <td class="cat">
+        <div class="cat-name">IO/信号/到位反馈</div>
+        <div class="bar"><div class="bar-track"><div class="bar-fill" style="width:20.9%;background:#85B7EB"></div></div></div>
+        <ul class="ex"><li>客户询问io四组数据是否可以实时修改而不损伤记忆体</li><li>协助客户工程师首次调试IO驱动电缸应用；</li><li>客户询问夹爪供电和io线是否可以分开供电</li></ul>
+        <details>
+          <summary>代表工单</summary>
+          <div class="case">
+            <p><span class="tag">现象</span>客户询问io四组数据是否可以实时修改而不损伤记忆体</p>
+            <p><span class="tag">结论</span>结论：客户不了解io参数的修改和保存原理和方法 处理：在客户群里告知</p>
+            <p><span class="tag">根因</span>其他/咨询类指导　<span class="tag">型号</span>PGIA-140-80-W</p>
+          </div>
+        </details>
+      </td>
+      <td class="num">94</td>
+      <td class="num">3.4%</td>
+      <td class="sub">电爪 55<br>电缸 25<br>音圈/直驱 8</td>
+      <td class="sub">客户应用问题 43<br>其他/咨询类指导 16<br>客户参数设置不当 9</td>
+    </tr>
+    <tr>
+      <td class="rank">10</td>
+      <td class="cat">
+        <div class="cat-name">现场调试/技术支持/定制需求</div>
+        <div class="bar"><div class="bar-track"><div class="bar-fill" style="width:20.4%;background:#85B7EB"></div></div></div>
+        <ul class="ex"><li>客户定制RCE电缸，需要现场协助调试</li><li>客户反馈夹爪调试需要协助</li><li>首次使用电爪，需要技术指导</li></ul>
+        <details>
+          <summary>代表工单</summary>
+          <div class="case">
+            <p><span class="tag">现象</span>需求协助逐个测试定制驱动的控制功能；</p>
+            <p><span class="tag">结论</span>3.逐个测试完成，纠正了客户通讯接线错误，以及动力线分配顺序不对的情况，驱动器参数功能正常；</p>
+            <p><span class="tag">根因</span>产品测试　<span class="tag">型号</span>【C】SAC2-NS1-G-U-10-A0-LA</p>
+          </div>
+        </details>
+      </td>
+      <td class="num">92</td>
+      <td class="num">3.3%</td>
+      <td class="sub">电爪 31<br>电缸 28<br>音圈/直驱 18</td>
+      <td class="sub">客户应用问题 52<br>其他/咨询类指导 9<br>产品测试 8</td>
+    </tr>
+    <tr>
+      <td class="rank">11</td>
+      <td class="cat">
+        <div class="cat-name">PLC/控制卡/主站适配</div>
+        <div class="bar"><div class="bar-track"><div class="bar-fill" style="width:18.2%;background:#85B7EB"></div></div></div>
+        <ul class="ex"><li>实现PLC控制传感器放大器清零功能</li><li>现场协助安装测试直线电机，配合三菱J5驱动；</li><li>客户反馈夹爪给PLC发的数值不对，一直在变化</li></ul>
+        <details>
+          <summary>代表工单</summary>
+          <div class="case">
+            <p><span class="tag">现象</span>现场协助安装测试直线电机，配合三菱J5驱动；</p>
+            <p><span class="tag">结论</span>4.电机带载运行测试正常，峰值电流也降低了，定位精度良好；</p>
+            <p><span class="tag">根因</span>客户参数设置不当　<span class="tag">型号</span>【C】MCEA-3WG-02-030-E1-O-F1-LX</p>
+          </div>
+        </details>
+      </td>
+      <td class="num">82</td>
+      <td class="num">3.0%</td>
+      <td class="sub">电爪 28<br>电缸 26<br>音圈/直驱 17</td>
+      <td class="sub">客户应用问题 34<br>其他/咨询类指导 15<br>客户程序/控制逻辑错误 14</td>
+    </tr>
+    <tr>
+      <td class="rank">12</td>
+      <td class="cat">
+        <div class="cat-name">使能/抱闸/飞车失控</div>
+        <div class="bar"><div class="bar-track"><div class="bar-fill" style="width:18.0%;background:#85B7EB"></div></div></div>
+        <ul class="ex"><li>现场停线完善 客户进行询问 r轴上使能的情况下 手可以转动 这种情况正常吗</li><li>客户反馈音圈电机无法断使能</li><li>客户现场俩台音圈上使能后 一点外力便导致断使能</li></ul>
+        <details>
+          <summary>代表工单</summary>
+          <div class="case">
+            <p><span class="tag">现象</span>现场停线完善 客户进行询问 r轴上使能的情况下 手可以转动 这种情况正常吗</p>
+            <p><span class="tag">结论</span>给客户调成上使能时 手不能转动的情况 进行取料 r轴碰到料盘直接开始抖动 客户了解后 调节原参数</p>
+            <p><span class="tag">根因</span>客户参数设置不当　<span class="tag">型号</span>【C】DLAR-25-50-ZH1-RH1-24U-BV-SX-1</p>
+          </div>
+        </details>
+      </td>
+      <td class="num">81</td>
+      <td class="num">2.9%</td>
+      <td class="sub">电缸 35<br>音圈/直驱 31<br>电爪 14</td>
+      <td class="sub">客户应用问题 37<br>客户参数设置不当 7<br>客户接线错误/松动 6</td>
+    </tr>
+    <tr>
+      <td class="rank">13</td>
+      <td class="cat">
+        <div class="cat-name">上位机/软件连接不上</div>
+        <div class="bar"><div class="bar-track"><div class="bar-fill" style="width:16.0%;background:#85B7EB"></div></div></div>
+        <ul class="ex"><li>现场因为大雨停线一天 今天早上启动时 驱动器连接不上</li><li>客户反馈上位机无法连接驱动器</li><li>客户工程师调试控制N2+料仓电缸，驱动器无法连接通讯控制；</li></ul>
+        <details>
+          <summary>代表工单</summary>
+          <div class="case">
+            <p><span class="tag">现象</span>现场因为大雨停线一天 今天早上启动时 驱动器连接不上</p>
+            <p><span class="tag">结论</span>将动力线插好 回复正常 防止这种情况的出现 检查了a6三楼 所有音圈的接线以及运动控制</p>
+            <p><span class="tag">根因</span>线缆/连接器不良　<span class="tag">型号</span>【C】DLAR-25-50-ZH1-RH1-24U-BV-SX-1</p>
+          </div>
+        </details>
+      </td>
+      <td class="num">72</td>
+      <td class="num">2.6%</td>
+      <td class="sub">电爪 45<br>电缸 12<br>音圈/直驱 6</td>
+      <td class="sub">客户应用问题 22<br>客户接线错误/松动 9<br>线缆/连接器不良 6</td>
+    </tr>
+    <tr>
+      <td class="rank">14</td>
+      <td class="cat">
+        <div class="cat-name">接线/供电/线缆</div>
+        <div class="bar"><div class="bar-track"><div class="bar-fill" style="width:13.3%;background:#85B7EB"></div></div></div>
+        <ul class="ex"><li>客户咨询相石驱动编码器端子上的具体型号</li><li>客户新收到的电爪延长线末端是集成好的端子，客户咨询能否自己将线剪断接线</li><li>客户购买的延长线短了，咨询能否自己接线</li></ul>
+        <details>
+          <summary>代表工单</summary>
+          <div class="case">
+            <p><span class="tag">现象</span>客户咨询相石驱动编码器端子上的具体型号</p>
+            <p><span class="tag">结论</span>结论： 客户不了解产品信息，远程群内支持</p>
+            <p><span class="tag">根因</span>其他/咨询类指导　<span class="tag">型号</span>VLA-25-10-H1-24-B-FA-0</p>
+          </div>
+        </details>
+      </td>
+      <td class="num">60</td>
+      <td class="num">2.2%</td>
+      <td class="sub">电爪 29<br>电缸 9<br>音圈/直驱 8</td>
+      <td class="sub">客户应用问题 36<br>其他/咨询类指导 11<br>产品测试 4</td>
+    </tr>
+    <tr>
+      <td class="rank">15</td>
+      <td class="cat">
+        <div class="cat-name">速度/节拍/性能测试</div>
+        <div class="bar"><div class="bar-track"><div class="bar-fill" style="width:12.7%;background:#85B7EB"></div></div></div>
+        <ul class="ex"><li>售前测试，客户现场负载100-150g，根据客户要求进行性能测试</li><li>客户要求减少电夹爪CD时间</li><li>加速度固定100，速度1-10-20-100，定位的时候肉眼可见明显区别，jog速度是一样的，没变化。</li></ul>
+        <details>
+          <summary>代表工单</summary>
+          <div class="case">
+            <p><span class="tag">现象</span>客户质询音圈电机运行速度是否适配工况</p>
+            <p><span class="tag">结论</span>告知客户0.2内无法完成工况运行动作。</p>
+            <p><span class="tag">根因</span>其他/咨询类指导　<span class="tag">型号</span>DLAR-20-40-H1-24U-BV</p>
+          </div>
+        </details>
+      </td>
+      <td class="num">57</td>
+      <td class="num">2.1%</td>
+      <td class="sub">电缸 23<br>电爪 22<br>音圈/直驱 10</td>
+      <td class="sub">客户应用问题 25<br>其他/咨询类指导 13<br>客户参数设置不当 9</td>
+    </tr>
+    <tr>
+      <td class="rank">16</td>
+      <td class="cat">
+        <div class="cat-name">位置偏差/位置丢失</div>
+        <div class="bar"><div class="bar-track"><div class="bar-fill" style="width:11.6%;background:#85B7EB"></div></div></div>
+        <ul class="ex"><li>夹爪末端存在高低差，不持平</li><li>客户反馈夹爪旋转轴误差角度过大</li><li>客户询问如何调夹爪的旋转分辨率</li></ul>
+        <details>
+          <summary>代表工单</summary>
+          <div class="case">
+            <p><span class="tag">现象</span>旋转夹爪RGIC-35-12，可以设置旋转的最小分辨率是多少呢，在哪里设置呢</p>
+            <p><span class="tag">结论</span>结论：得知最小旋转角分辨率为360，最高为3600和上位机修改地址 处理：群里告知客户</p>
+            <p><span class="tag">根因</span>其他/咨询类指导　<span class="tag">型号</span>RGIC-35-12-O-B-M1-L5-J1-F0-4</p>
+          </div>
+        </details>
+      </td>
+      <td class="num">52</td>
+      <td class="num">1.9%</td>
+      <td class="sub">电爪 22<br>音圈/直驱 19<br>电缸 10</td>
+      <td class="sub">其他/咨询类指导 12<br>客户应用问题 11<br>客户使用不当/误操作 9</td>
+    </tr>
+    <tr>
+      <td class="rank">17</td>
+      <td class="cat">
+        <div class="cat-name">堵转/过载/过流</div>
+        <div class="bar"><div class="bar-track"><div class="bar-fill" style="width:10.2%;background:#85B7EB"></div></div></div>
+        <ul class="ex"><li>协助指导电缸静态推拉力堵转应用功能；</li><li>客户反馈夹爪到达指定位置，夹爪亮绿灯，堵转无法移动。</li><li>电机空载时用驱动器进行点动控制，都会报过载</li></ul>
+        <details>
+          <summary>代表工单</summary>
+          <div class="case">
+            <p><span class="tag">现象</span>协助指导电缸静态推拉力堵转应用功能；</p>
+            <p><span class="tag">结论</span>7.客户测试需求已满足，持续产品测试中；</p>
+            <p><span class="tag">根因</span>产品测试　<span class="tag">型号</span>MCEA-4G-05-150-E1-O-F1-S02-L5-0</p>
+          </div>
+        </details>
+      </td>
+      <td class="num">46</td>
+      <td class="num">1.7%</td>
+      <td class="sub">电爪 31<br>电缸 10<br>音圈/直驱 5</td>
+      <td class="sub">客户应用问题 19<br>客户参数设置不当 5<br>客户使用不当/误操作 5</td>
+    </tr>
+    <tr>
+      <td class="rank">18</td>
+      <td class="cat">
+        <div class="cat-name">串口/485/Modbus通讯</div>
+        <div class="bar"><div class="bar-track"><div class="bar-fill" style="width:10.2%;background:#85B7EB"></div></div></div>
+        <ul class="ex"><li>客户反馈驱动器串口无法扫描</li><li>串口通讯连接不上，阻值异常</li><li>夹爪的modbus参数设置无校验、那么报文后面的校验码是不是就不用了</li></ul>
+        <details>
+          <summary>代表工单</summary>
+          <div class="case">
+            <p><span class="tag">现象</span>客户反映,无法通过PLC使用485通讯与夹爪通讯</p>
+            <p><span class="tag">结论</span>最后发现电爪的从站地址和其他从站重复 修改后无问题</p>
+            <p><span class="tag">根因</span>客户程序/控制逻辑错误　<span class="tag">型号</span>PGE-15-10-O-B-M1-LX-0</p>
+          </div>
+        </details>
+      </td>
+      <td class="num">46</td>
+      <td class="num">1.7%</td>
+      <td class="sub">电爪 32<br>电缸 11<br>驱动 2</td>
+      <td class="sub">客户应用问题 12<br>其他/咨询类指导 10<br>客户程序/控制逻辑错误 8</td>
+    </tr>
+    <tr>
+      <td class="rank">19</td>
+      <td class="cat">
+        <div class="cat-name">固件/软件BUG/升级</div>
+        <div class="bar"><div class="bar-track"><div class="bar-fill" style="width:7.6%;background:#85B7EB"></div></div></div>
+        <ul class="ex"><li>电爪批量开箱不良，需要更新固件</li><li>歌尔二期NP1培训、歌尔四期新设备固件升级</li><li>现场1台夹爪异常堵转，需要升级固件，看能否解决</li></ul>
+        <details>
+          <summary>代表工单</summary>
+          <div class="case">
+            <p><span class="tag">现象</span>歌尔二期NP1培训、歌尔四期新设备固件升级</p>
+            <p><span class="tag">结论</span>结论：1、歌尔二期由于权限未开好，和客户沟通，6.2号再进行培训。 2、歌尔四期两台夹爪固件升级完成，技术跟进验证2小时，夹爪运行正常，柔性力控也正常。</p>
+            <p><span class="tag">根因</span>其他/咨询类指导　<span class="tag">型号</span>【C】PGEF-10-20-E2-O-F-L5-A020-001</p>
+          </div>
+        </details>
+      </td>
+      <td class="num">34</td>
+      <td class="num">1.2%</td>
+      <td class="sub">电缸 9<br>音圈/直驱 9<br>电爪 7</td>
+      <td class="sub">固件/软件BUG 11<br>客户应用问题 9<br>0006 4</td>
+    </tr>
+    <tr>
+      <td class="rank">20</td>
+      <td class="cat">
+        <div class="cat-name">安装/机械结构/形变</div>
+        <div class="bar"><div class="bar-track"><div class="bar-fill" style="width:5.1%;background:#85B7EB"></div></div></div>
+        <ul class="ex"><li>客户需求现场协助安装调试ZR电机；</li><li>夹爪上位机的驱动怎么安装</li><li>PGHL-400-80这款夹爪能不能和发那科机械臂通讯</li></ul>
+        <details>
+          <summary>代表工单</summary>
+          <div class="case">
+            <p><span class="tag">现象</span>PGHL-400-80这款夹爪能不能和发那科机械臂通讯</p>
+            <p><span class="tag">结论</span>告知只要机械臂那边支持485通讯就可以</p>
+            <p><span class="tag">根因</span>其他/咨询类指导　<span class="tag">型号</span>PGHL-400-80-W-S</p>
+          </div>
+        </details>
+      </td>
+      <td class="num">23</td>
+      <td class="num">0.8%</td>
+      <td class="sub">电爪 16<br>音圈/直驱 4<br>电缸 2</td>
+      <td class="sub">客户应用问题 13<br>其他/咨询类指导 5<br>产品测试 1</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>三条关键结论</h2>
+<div class="find"><ol>
+  <li><b>前三类吃掉 41%</b>：初始化/回零（450 条）、
+      力控/夹持力（347 条）、报警代码（340 条）。
+      做知识库或新人培训，先啃这三类覆盖率最高。</li>
+  <li><b>抖动单当调参单接。</b>抖动/异响类 107 条里，根因是"客户参数设置不当"的有
+      44 条（41%），是该类第一大根因——
+      先问增益/刚性/惯量参数，别先怀疑硬件。</li>
+  <li><b>真硬件/固件问题占比很低。</b>固件 BUG 类只有 34 条
+      （1.2%），"电机/编码器/硬件损坏"未进 TOP20。
+      绝大多数是配置与用法问题，远程可解，最适合做成自助 Q&amp;A。</li>
+</ol></div>
+
+<h2>官方「问题类型」字段对照（同基数 2772 条）</h2>
+<p style="font-size:13px;color:var(--muted);margin:6px 0 0;">
+  工单系统原始分类共 20 类。粒度粗，且已停止新登记的【禁】类仍占
+  40.8%，不建议直接拿来做知识库分类。</p>
+<table>
+  <thead><tr><th>问题类型</th><th class="num">条数</th><th class="num">占比</th><th>分布</th></tr></thead>
+  <tbody><tr><td>【禁】客户应用使用</td><td class="num">840</td><td class="num">30.3%</td><td class="bwrap"><div class="off-fill" style="width:100.0%"></div></td></tr><tr><td>运动控制异常</td><td class="num">506</td><td class="num">18.3%</td><td class="bwrap"><div class="off-fill" style="width:60.2%"></div></td></tr><tr><td>其他/咨询类</td><td class="num">337</td><td class="num">12.2%</td><td class="bwrap"><div class="off-fill" style="width:40.1%"></div></td></tr><tr><td>【禁】简易咨询（小于10分钟）</td><td class="num">213</td><td class="num">7.7%</td><td class="bwrap"><div class="off-fill" style="width:25.4%"></div></td></tr><tr><td>电气性能异常</td><td class="num">175</td><td class="num">6.3%</td><td class="bwrap"><div class="off-fill" style="width:20.8%"></div></td></tr><tr><td>通讯连接异常</td><td class="num">161</td><td class="num">5.8%</td><td class="bwrap"><div class="off-fill" style="width:19.2%"></div></td></tr><tr><td>报警提示类异常</td><td class="num">156</td><td class="num">5.6%</td><td class="bwrap"><div class="off-fill" style="width:18.6%"></div></td></tr><tr><td>力控/压力异常</td><td class="num">88</td><td class="num">3.2%</td><td class="bwrap"><div class="off-fill" style="width:10.5%"></div></td></tr><tr><td>初始化异常</td><td class="num">66</td><td class="num">2.4%</td><td class="bwrap"><div class="off-fill" style="width:7.9%"></div></td></tr><tr><td>参数/配置异常</td><td class="num">60</td><td class="num">2.2%</td><td class="bwrap"><div class="off-fill" style="width:7.1%"></div></td></tr><tr><td>产品性能功能异常</td><td class="num">40</td><td class="num">1.4%</td><td class="bwrap"><div class="off-fill" style="width:4.8%"></div></td></tr><tr><td>【禁】产品选型</td><td class="num">37</td><td class="num">1.3%</td><td class="bwrap"><div class="off-fill" style="width:4.4%"></div></td></tr><tr><td>机械结构异常</td><td class="num">32</td><td class="num">1.2%</td><td class="bwrap"><div class="off-fill" style="width:3.8%"></div></td></tr><tr><td>技术赋能（产品培训及资料撰写）</td><td class="num">19</td><td class="num">0.7%</td><td class="bwrap"><div class="off-fill" style="width:2.3%"></div></td></tr><tr><td>【禁】售前测试</td><td class="num">17</td><td class="num">0.6%</td><td class="bwrap"><div class="off-fill" style="width:2.0%"></div></td></tr><tr><td>【禁】产品维修</td><td class="num">11</td><td class="num">0.4%</td><td class="bwrap"><div class="off-fill" style="width:1.3%"></div></td></tr><tr><td>【禁】产品结构性能</td><td class="num">9</td><td class="num">0.3%</td><td class="bwrap"><div class="off-fill" style="width:1.1%"></div></td></tr><tr><td>【禁】待确认</td><td class="num">2</td><td class="num">0.1%</td><td class="bwrap"><div class="off-fill" style="width:0.2%"></div></td></tr><tr><td>【禁】SOP制作</td><td class="num">2</td><td class="num">0.1%</td><td class="bwrap"><div class="off-fill" style="width:0.2%"></div></td></tr><tr><td>外观瑕疵</td><td class="num">1</td><td class="num">0.0%</td><td class="bwrap"><div class="off-fill" style="width:0.1%"></div></td></tr></tbody>
+</table>
+
+<h2>交叉验证：噗元 FAQ（189 条，2025-04-24）</h2>
+<p style="font-size:13px;color:var(--muted);margin:6px 0 0;">
+  独立数据源，排序与华东工单高度一致（初始化、力控同为前二），说明分类口径站得住。</p>
+<table>
+  <thead><tr><th>问题类别</th><th class="num">条数</th><th class="num">占比</th></tr></thead>
+  <tbody><tr><td>初始化/回零/寻相失败</td><td class="num">36</td><td class="num">19.0%</td></tr><tr><td>力控/压力/夹持力异常</td><td class="num">22</td><td class="num">11.6%</td></tr><tr><td>选型/替换/规格咨询</td><td class="num">19</td><td class="num">10.1%</td></tr><tr><td>报警代码/报错停机</td><td class="num">13</td><td class="num">6.9%</td></tr><tr><td>参数/寄存器/模式配置</td><td class="num">11</td><td class="num">5.8%</td></tr><tr><td>EtherCAT/总线通讯异常</td><td class="num">11</td><td class="num">5.8%</td></tr><tr><td>串口/485/Modbus通讯</td><td class="num">9</td><td class="num">4.8%</td></tr></tbody>
+</table>
+
+<footer>
+  复现方式：<code>python scripts/gen_faq_report.py</code>（生成 HTML）、
+  <code>python scripts/analyze_faq_topics.py --all</code>（控制台明细，含噗元交叉验证）。<br>
+  关键词表在 <code>scripts/analyze_faq_topics.py</code> 顶部 <code>RULES</code> 列表，顺序即优先级，改动后重跑即可。<br>
+  表中"典型现象""代表工单"均为工单原文摘录，未做脱敏，便于回溯到原工单。
+</footer>
+
+</div>
+</body>
+</html>
